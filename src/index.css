@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+nav .active   {
+  color: #860A35;
+  border: 2px solid #860A35;
+  border-radius: 10px;
+  /* font-size: bolder; */
+}

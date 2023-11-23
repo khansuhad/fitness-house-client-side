@@ -1,17 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Root from './components/Root/Root.jsx';
+import Home from './components/Home/Home.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hi its me!
-      <img src="https://i.ibb.co/Jntk2zH/Whats-App-Image-2023-11-23-at-8-00-34-PM-1-removebg-preview.png" alt="" />
-    </div>,
+    element: <Root/> ,
+    children: [
+      {
+        path:'/',
+        element:<Home/>
+      }
+    ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
