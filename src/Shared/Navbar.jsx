@@ -5,29 +5,27 @@ import { RxCross1 } from "react-icons/rx";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+//   const [isSticky, setIsSticky] = useState(false);
 
 
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsSticky(true);
-      }
-    };
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (window.scrollY > 0) {
+//         setIsSticky(true);
+//       }
+//     };
 
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
     return (
-        <header className="w-full fixed top-0 left-0 right-0 ">
+        <header className="w-full  ">
       <nav
-        className={`py-4 md:px-12 px-4 bg-white ${
-          isSticky ? "sticky top-0 right-0 left-0 bg-white " : ""
-        }`}
+        className={`py-4 md:px-12 px-4 bg-white `}
       >
         <div className="flex items-center justify-between">
     <div className='flex items-center'>
