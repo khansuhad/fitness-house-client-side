@@ -1,3 +1,9 @@
+import { HiOutlineMail } from "react-icons/hi";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { GrUserManager } from "react-icons/gr";
+import { MdOutlinePhotoCamera } from "react-icons/md";
+import { Link } from "react-router-dom";
+import "../Login/login.css"
 
 const Register = () => {
     return (
@@ -9,8 +15,20 @@ const Register = () => {
             </div>
     
             <div className=" grid gap-5">
-                <h1 className="text-5xl font-bold text-white text-center lg:text-left">Login</h1>
+                <h1 className="text-5xl font-bold text-white text-center lg:text-left">Register</h1>
                 <form action="" className="space-y-6 text-white ">
+                    <div className="relative">
+                        <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
+                         <GrUserManager/>
+                        </div>
+                        <input type="text" placeholder="Name" className="w-full bg-white-light py-2 px-12 rounded-full focus:bg-black-dark focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg"/>
+                    </div>
+                    <div className="relative">
+                        <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
+                         <MdOutlinePhotoCamera/>
+                        </div>
+                        <input type="text" placeholder="photo URL" className="w-full bg-white-light py-2 px-12 rounded-full focus:bg-black-dark focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg"/>
+                    </div>
                     <div className="relative">
                         <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
                          <HiOutlineMail/>
@@ -23,10 +41,10 @@ const Register = () => {
                         </div>
                         <input type="text" placeholder="Password" className="w-full bg-white-light py-2 px-12 rounded-full focus:bg-black-dark focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg"/>
                     </div>
-                    <button className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full font-semibold rounded-full py-2">Sign in</button>
+                    <button className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full font-semibold rounded-full py-2">Register</button>
                 </form>
                 <div className="text-dull-white border-t border-white-light pt-4 space-y-4 text-sm">
-                    <p>Do not have an account? <Link className="text-neon-blue font-semibold cursor-pointer">Sign up</Link></p>
+                    <p>Do you have an account? <Link to="/login" className="text-neon-blue font-semibold cursor-pointer">Sign in</Link></p>
                 </div>
             </div>
         </div>

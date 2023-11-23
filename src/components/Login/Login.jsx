@@ -29,7 +29,7 @@ const Login = () => {
                     <button className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full font-semibold rounded-full py-2">Sign in</button>
                 </form>
                 <div className="text-dull-white border-t border-white-light pt-4 space-y-4 text-sm">
-                    <p>Do not have an account? <Link className="text-neon-blue font-semibold cursor-pointer">Sign up</Link></p>
+                    <p>Do not have an account? <Link to='/register' className="text-neon-blue font-semibold cursor-pointer">Sign up</Link></p>
                 </div>
             </div>
         </div>
