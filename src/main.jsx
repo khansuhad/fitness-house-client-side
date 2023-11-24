@@ -10,6 +10,9 @@ import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
+import DashboardImg from './components/Dashboard/DashboardImg.jsx';
+import AllSubscribers from './components/Dashboard/AllSubscribers/AllSubscribers.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +21,20 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home/>
+      },
+      {
+        path:"/dashboard",
+        element:<Dashboard/>,
+        children:[
+          {
+            path:'/dashboard',
+            element:<DashboardImg/>
+          },
+          {
+            path:'/dashboard/allsubscribers',
+            element:<AllSubscribers/>
+          }
+        ]
       }
     ]
   },
