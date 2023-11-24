@@ -14,6 +14,7 @@ import Dashboard from './components/Dashboard/Dashboard.jsx';
 import DashboardImg from './components/Dashboard/DashboardImg.jsx';
 import AllSubscribers from './components/Dashboard/AllSubscribers/AllSubscribers.jsx';
 import AllTrainers from './components/Dashboard/AllTrainers/AllTrainers.jsx';
+import AppliedTrainer from './components/Dashboard/AppliedTrainer/AppliedTrainer.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             path:'/dashboard/alltrainers',
             element:<AllTrainers/>
           },
+          {
+            path:'/dashboard/appliedtrainer',
+            element:<AppliedTrainer/>
+          }
         ]
       }
     ]

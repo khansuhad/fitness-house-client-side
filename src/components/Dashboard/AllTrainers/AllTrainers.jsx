@@ -6,7 +6,7 @@ const AllTrainers = () => {
             <div className="flex justify-center">
                 <h1 className="text-4xl font-semibold text-primary italic">All Trainers : 100 </h1>
             </div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mt-10">
   <table className="table">
     {/* head */}
     <thead>
