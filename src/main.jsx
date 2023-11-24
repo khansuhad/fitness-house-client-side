@@ -13,6 +13,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import DashboardImg from './components/Dashboard/DashboardImg.jsx';
 import AllSubscribers from './components/Dashboard/AllSubscribers/AllSubscribers.jsx';
+import AllTrainers from './components/Dashboard/AllTrainers/AllTrainers.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
           {
             path:'/dashboard/allsubscribers',
             element:<AllSubscribers/>
-          }
+          },
+          {
+            path:'/dashboard/alltrainers',
+            element:<AllTrainers/>
+          },
         ]
       }
     ]
