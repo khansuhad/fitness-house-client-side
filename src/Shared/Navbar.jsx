@@ -1,10 +1,30 @@
-import  { useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiMenu } from "react-icons/hi"; 
 import { RxCross1 } from "react-icons/rx"; 
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const {user , logOut  } = useContext(AuthContext);
+    console.log(user?.photoURL);
+    const handleSignOut = () => {
+      logOut()
+      .then(() => {
+        console.log('successfully sign out ')
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "sign out successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+      })
+      .catch(error => {
+        console.log(error.message)
+      })
+     }
 //   const [isSticky, setIsSticky] = useState(false);
 
 
@@ -71,9 +91,24 @@ const Navbar = () => {
         <div className='flex items-center'>
       
           <div className=" ">
-            <Link to='/login' className="px-4 py-2 bg-transparent border border-primary text-primary rounded hover:bg-primary hover:text-white transition-all duration-300">
-              Login
-            </Link>
+          {
+                user ? <div className='flex gap-2 items-center'>
+              
+                <div>
+                <label  className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+                </div>
+            
+    <div>
+    <Link  className="px-4 py-2 bg-transparent border border-primary text-primary rounded hover:bg-primary hover:text-white transition-all duration-300" onClick={handleSignOut}>Log out</Link>
+    </div>
+             
+              </div>  :
+                <Link to='/login' className="px-4 py-2 bg-transparent border border-primary text-primary rounded hover:bg-primary hover:text-white transition-all duration-300">Login</Link>
+             }
           </div>
          
         </div>

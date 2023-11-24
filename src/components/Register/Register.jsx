@@ -84,7 +84,7 @@ const Register = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "error",
-                    title: `${error.message}`,
+                    title: `${error.message}` ,
                     showConfirmButton: false,
                     timer: 1500
                   })
