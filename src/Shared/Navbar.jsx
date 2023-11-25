@@ -76,8 +76,8 @@ const Navbar = () => {
               
             Classes
             </NavLink>
-            <NavLink  to="/community" className="block  hover:text-gray-400 py-2 px-4 cursor-pointer">
-            Community
+            <NavLink  to="/forums" className="block  hover:text-gray-400 py-2 px-4 cursor-pointer">
+            Forums
             </NavLink>
             <NavLink  to="/dashboard" className="block  hover:text-gray-400 py-2 px-4 cursor-pointer">
             Dashboard
@@ -132,8 +132,8 @@ const Navbar = () => {
             <NavLink   to="/classes" className="block hover:text-gray-400 py-2">
             Classes
             </NavLink>
-            <NavLink   to="/community" className="block hover:text-gray-400 py-2">
-            Community
+            <NavLink   to="/forums" className="block hover:text-gray-400 py-2">
+            Forums
             </NavLink>
             <NavLink  to="/dashboard" className="block  hover:text-gray-400 py-2 px-4 cursor-pointer">
             Dashboard

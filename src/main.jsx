@@ -25,6 +25,8 @@ import Balance from './components/Dashboard/Balance/Balance.jsx';
 import BeATrainer from './components/TrainersPages/BeATrainer/BeATrainer.jsx';
 import BeATrainerPage from './components/TrainersPages/BeATrainer/someething.jsx';
 import AddNewForum from './components/Dashboard/AddNewForum/AddNewForum.jsx';
+import Forum from './components/Forum/Forums.jsx';
+import Forums from './components/Forum/Forums.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:'/trainer',
         element:<BeATrainerPage/>
+      },
+      {
+        path:"/forums",
+        element:<Forums/>
       },
       {
         path:"/dashboard",
@@ -65,7 +71,9 @@ const router = createBrowserRouter([
           {
             path:'/dashboard/addnewforum',
             element:<AddNewForum/>
-          }
+          },
+        
+
         ]
       }
     ]

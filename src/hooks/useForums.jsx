@@ -7,7 +7,7 @@ const useForums = () => {
     const { data: forums = []  } = useQuery({
         queryKey: ['forums'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/forums')
+            const res = await axiosSecure.get('/newforums')
             console.log(res?.data);
             return res?.data ;
         }
