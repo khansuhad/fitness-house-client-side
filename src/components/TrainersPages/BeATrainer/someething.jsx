@@ -53,7 +53,7 @@ const BeATrainerPage = () => {
     //   let availableSlot = Math.abs(availableFirstTimeDay - availableSecondTimeDay) ;
     // }
     const trainerFormInfo = {fullName, age , experience, facebook , availableFirstTimeDay,availableSecondTimeDay,secondTimeFormat , firstTimeFormat, email , image}
-    const trainerAllInfo = {trainerFormInfo , trainerInfo}
+    const trainerAllInfo = {...trainerFormInfo , ...trainerInfo}
     // setTrainerInfo((prevInfo) => ({
     //   ...prevInfo , fullName , age , experience, facebook , availabletimeday , timeformat, email , image
     // }));

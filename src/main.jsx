@@ -23,9 +23,7 @@ import AllTrainers from './components/Dashboard/AllTrainers/AllTrainers.jsx';
 import AppliedTrainer from './components/Dashboard/AppliedTrainer/AppliedTrainer.jsx';
 import Balance from './components/Dashboard/Balance/Balance.jsx';
 import BeATrainer from './components/TrainersPages/BeATrainer/BeATrainer.jsx';
-import BeATrainerPage from './components/TrainersPages/BeATrainer/someething.jsx';
 import AddNewForum from './components/Dashboard/AddNewForum/AddNewForum.jsx';
-import Forum from './components/Forum/Forums.jsx';
 import Forums from './components/Forum/Forums.jsx';
 import Trainer from './components/TrainersPages/Trainer/Trainer.jsx';
 const router = createBrowserRouter([

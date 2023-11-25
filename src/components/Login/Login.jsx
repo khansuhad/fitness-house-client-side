@@ -64,7 +64,7 @@ const Login = () => {
               .then(res => {
                 console.log(res?.data);
               })
-        navigate('/');
+           navigate('/');
     })
     .catch(error => {
             Swal.fire({
