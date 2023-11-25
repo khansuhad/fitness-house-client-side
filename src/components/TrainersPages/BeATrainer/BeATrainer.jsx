@@ -1,10 +1,11 @@
 import WeekDef from "./WeekDef";
+import BeATrainerPage from "./someething";
 
 
 const BeATrainer = () => {
     return (
         <div>
-            <WeekDef/>
+            <BeATrainerPage/>
         </div>
     );
 };

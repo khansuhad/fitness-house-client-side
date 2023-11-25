@@ -27,6 +27,7 @@ import BeATrainerPage from './components/TrainersPages/BeATrainer/someething.jsx
 import AddNewForum from './components/Dashboard/AddNewForum/AddNewForum.jsx';
 import Forum from './components/Forum/Forums.jsx';
 import Forums from './components/Forum/Forums.jsx';
+import Trainer from './components/TrainersPages/Trainer/Trainer.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path:'/trainer',
-        element:<BeATrainerPage/>
+        element:<Trainer/>
+      },
+      {
+        path:'/beatrainer',
+        element:<BeATrainer/>
       },
       {
         path:"/forums",
