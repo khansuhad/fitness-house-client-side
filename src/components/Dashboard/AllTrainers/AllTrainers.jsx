@@ -1,10 +1,12 @@
+import useTrainers from "../../../hooks/useTrainers";
 
 
 const AllTrainers = () => {
+  const [trainers] = useTrainers();
     return (
         <div className="bg-navmenu min-h-screen p-10">
             <div className="flex justify-center">
-                <h1 className="text-4xl font-semibold text-primary italic">All Trainers : 100 </h1>
+                <h1 className="text-4xl font-semibold text-primary italic">All Trainers : {trainers?.length} </h1>
             </div>
             <div className="overflow-x-auto mt-10">
   <table className="table">
@@ -19,28 +21,30 @@ const AllTrainers = () => {
     </thead>
     <tbody>
       {/* row 1 */}
-      <tr className="text-xl text-black">
-        <th>
-        <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
-                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-              </div>
+     {
+      trainers?.map(trainer =>  <tr key={trainer?._id} className="text-xl text-black">
+      <th>
+      <div className="avatar">
+            <div className="mask mask-squircle w-12 h-12">
+              <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
             </div>
-        </th>
-        <td>
-            <div>
-              <div className="font-bold">suhad</div>
-            </div>
-        
-        </td>
-        <td>
-       <h1>suhadahmodkhan@gmail.com</h1>
-        </td>
-        <td>
-            <h1> unpaid</h1>
-        </td>
-       
-      </tr>
+          </div>
+      </th>
+      <td>
+          <div>
+            <div className="font-bold">suhad</div>
+          </div>
+      
+      </td>
+      <td>
+     <h1>suhadahmodkhan@gmail.com</h1>
+      </td>
+      <td>
+          <h1> unpaid</h1>
+      </td>
+     
+    </tr>)
+     }
     </tbody>
 
     

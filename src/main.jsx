@@ -24,6 +24,7 @@ import AppliedTrainer from './components/Dashboard/AppliedTrainer/AppliedTrainer
 import Balance from './components/Dashboard/Balance/Balance.jsx';
 import BeATrainer from './components/TrainersPages/BeATrainer/BeATrainer.jsx';
 import BeATrainerPage from './components/TrainersPages/BeATrainer/someething.jsx';
+import AddNewForum from './components/Dashboard/AddNewForum/AddNewForum.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
             path:'/dashboard/balance',
             element:<Balance/>
           },
+          {
+            path:'/dashboard/addnewforum',
+            element:<AddNewForum/>
+          }
         ]
       }
     ]

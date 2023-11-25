@@ -51,7 +51,9 @@ const Dashboard = () => {
       
         {/* for admin and trainer */}
      {
-        role === 'admin' || role === 'trainer' &&    <Link to='/dashboard/addnewform' className="p-2.5 my-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary hover:text-dashmenu">Add New Forum</Link>
+        role === 'admin' || role === 'trainer' ?  <div>
+          <Link to='/dashboard/addnewforum' className="p-2.5 my-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary hover:text-dashmenu">Add New Forum</Link>
+        </div> : <></>
      }
         {/* for all users */}
         <Link to='/dashboard/profilesetting' className="p-2.5 my-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary hover:text-dashmenu">Profile Setting</Link>
