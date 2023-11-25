@@ -22,6 +22,8 @@ import AllSubscribers from './components/Dashboard/AllSubscribers/AllSubscribers
 import AllTrainers from './components/Dashboard/AllTrainers/AllTrainers.jsx';
 import AppliedTrainer from './components/Dashboard/AppliedTrainer/AppliedTrainer.jsx';
 import Balance from './components/Dashboard/Balance/Balance.jsx';
+import BeATrainer from './components/TrainersPages/BeATrainer/BeATrainer.jsx';
+import BeATrainerPage from './components/TrainersPages/BeATrainer/someething.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home/>
+      },
+      {
+        path:'/trainer',
+        element:<BeATrainerPage/>
       },
       {
         path:"/dashboard",

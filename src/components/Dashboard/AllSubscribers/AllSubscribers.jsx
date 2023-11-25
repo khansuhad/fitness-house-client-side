@@ -1,8 +1,11 @@
+import useSubscribers from "../../../hooks/useSubscribers";
+
 const AllSubscribers = () => {
+  const [subscribers] = useSubscribers();
     return (
         <div className="bg-navmenu min-h-screen p-10">
             <div className="flex justify-center">
-                <h1 className="text-4xl font-semibold text-primary italic">All Subscribers : 100 </h1>
+                <h1 className="text-4xl font-semibold text-primary italic">All Subscribers : {subscribers?.length} </h1>
             </div>
                  <div className="overflow-x-auto flex justify-center mt-10">
   <table className="table text-2xl ">
@@ -16,25 +19,24 @@ const AllSubscribers = () => {
     <tbody>
       {/* row 1 */}
     {
-    //   allBids?.map( bid => 
-       <tr className="text-xl font-semibold" >
+      subscribers?.map( subscriber =>  <tr key={subscriber._id} className="text-xl font-semibold" >
         <td>
           <div className="flex items-center space-x-3">
           
             <div>
-              <div className="font-bold">Suhad</div>
+              <div className="font-bold">{subscriber?.name}</div>
              
             </div>
           </div>
         </td>
         <td>
-         <h1>suhadahmodkhan@gmail.com</h1>
+         <h1>{subscriber?.email}</h1>
           
         </td>
         
       </tr> 
+)
     }
-   
     </tbody>
     {/* foot */}
 
