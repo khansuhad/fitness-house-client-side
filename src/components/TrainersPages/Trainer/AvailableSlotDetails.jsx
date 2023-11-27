@@ -26,7 +26,7 @@ const AvailableSlotDetails = () => {
  
   const handleJoinNow = (e) => {
     e.preventDefault();
-    const JoinNowForm = {selectedSlot , bookedUser , details}
+    const JoinNowForm = {selectedSlot , bookedUser , details , timeSlots}
     console.log(JoinNowForm);
     axiosSecure.post('/bookedclasses' , JoinNowForm)
     .then(res => {

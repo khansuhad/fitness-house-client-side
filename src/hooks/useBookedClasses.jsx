@@ -3,6 +3,7 @@ import useAxiosSecure from "./useAxiosSecure";
 
 
 const useBookedClasses = ({email}) => {
+    console.log(email);
     const axiosSecure = useAxiosSecure();
     const { data: bookedClasses = []  } = useQuery({
         queryKey: ['bookedClasses'],
