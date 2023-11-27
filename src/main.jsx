@@ -30,6 +30,7 @@ import TrainerDetails from './components/TrainersPages/Trainer/TrainerDetails.js
 import AddNewClass from './components/Dashboard/AddNewClass/AddNewClass.jsx';
 import AvailableSlot from './components/TrainersPages/Trainer/AvailableSlot.jsx';
 import AvailableSlotDetails from './components/TrainersPages/Trainer/AvailableSlotDetails.jsx';
+import ManageSlots from './components/Dashboard/ManageSlots/ManageSlots.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
           {
             path:'/dashboard/addnewclass',
             element:<AddNewClass/>
+          },
+          {
+              path:'/dashboard/manageslots',
+              element:<ManageSlots/>
           }
         
 
