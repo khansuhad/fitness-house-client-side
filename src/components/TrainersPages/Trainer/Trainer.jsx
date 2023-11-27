@@ -9,7 +9,7 @@ const Trainer = () => {
     <div className="w-[80%] mx-auto">
       <div className="flex justify-center items-center">
         <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">
-          Forums
+          Trainers
         </h1>
       </div>
       <div className="flex justify-center items-center my-4">
