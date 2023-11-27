@@ -20,10 +20,10 @@ const Register = () => {
       const name = e.target.name.value;
       const email = e.target.email.value;
       const password = e.target.password.value;
-      const photoURL = e.target.photoURL.value;
-      console.log(name, email, password, photoURL);
+      const image = e.target.photoURL.value;
+      console.log(name, email, password, image);
       const role = 'member';
-      const userInfo = {name ,email ,role}
+      const userInfo = {name ,email ,role ,image }
   
       if (password.length < 6) {
         Swal.fire({
@@ -63,7 +63,7 @@ const Register = () => {
           const user = res.user;
           updateProfile(user, {
             displayName: name,
-            photoURL: photoURL,
+            photoURL: image,
           })
             .then(() => {
               setUser({ ...user, displayName: name, photoURL: photoURL });
