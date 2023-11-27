@@ -36,10 +36,12 @@ import Classes from './components/Classes/Classes.jsx';
 import ClassDetails from './components/Classes/ClassDetails.jsx';
 import RecommandedClass from './components/Dashboard/RecommandedClass/RecommandedClass.jsx';
 import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/> ,
+    errorElement:<ErrorPage/>,
     children: [
       {
         path:'/',
