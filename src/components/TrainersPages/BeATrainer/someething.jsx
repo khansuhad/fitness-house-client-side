@@ -1,16 +1,32 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import useAppiledTrainers from '../../../hooks/useAppiledTrainers';
+import { useNavigate } from 'react-router-dom';
+import useUsers from '../../../hooks/useUsers';
 
 const BeATrainerPage = () => {
+  const navigate = useNavigate();
+  const [userFound , setUserFound] = useState([]);
+  const [userRoll , setUserRoll] = useState([]);
+  const [users] = useUsers();
+  const [appliedTrainers] = useAppiledTrainers();
   const axiosSecure = useAxiosSecure();
   const {user} = useContext(AuthContext)
   const [trainerInfo, setTrainerInfo] = useState({
     skills: [],
     availableTimeWeek: []
    });
-  console.log(trainerInfo);
-
+  console.log(appliedTrainers);
+  console.log(userFound);
+ useEffect(() => {
+  const findUser = appliedTrainers?.find( fUser => fUser?.email === user?.email );
+    setUserFound(findUser)
+     console.log(findUser );
+  const findUserRoll = users?.find( fUser => fUser?.email === user?.email );
+  setUserRoll(findUserRoll)
+     console.log(findUser );
+ },[appliedTrainers , user?.email, users])
 
   const handleSkillChange = (e) => {
     const { value, checked } = e.target;
@@ -42,16 +58,7 @@ const BeATrainerPage = () => {
     const secondTimeFormat = form.secondtimeformat.value;
     // let availableSlot = 0 ;
     const email = user?.email ;
-    // if(firstTimeFormat === 'am' && secondTimeFormat === 'pm'){
-      
-    //     let availableSlot = 12 - Math.abs(availableFirstTimeDay - availableSecondTimeDay);
-    // }
-    // else if(firstTimeFormat === 'pm' && secondTimeFormat === 'am'){
-    //   let availableSlot = 12 - Math.abs(availableFirstTimeDay - availableSecondTimeDay);
-    // }
-    // else{
-    //   let availableSlot = Math.abs(availableFirstTimeDay - availableSecondTimeDay) ;
-    // }
+
     const trainerFormInfo = {fullName, age , experience, facebook , availableFirstTimeDay,availableSecondTimeDay,secondTimeFormat , firstTimeFormat, email , image}
     const trainerAllInfo = {...trainerFormInfo , ...trainerInfo}
     // setTrainerInfo((prevInfo) => ({
@@ -62,6 +69,7 @@ const BeATrainerPage = () => {
     axiosSecure.post('/appliedtrainers', trainerAllInfo)
     .then(res => {
       console.log(res?.data);
+      navigate('/')
     })
 
 
@@ -144,7 +152,7 @@ const BeATrainerPage = () => {
            <div className='flex gap-4 flex-1'>
            <input
                   type="number"
-                required
+                 required
                   name="availablefirsttimeday"
                   className="block border border-primary rounded-lg p-2 mt-2 w-full"
                 />
@@ -192,7 +200,7 @@ const BeATrainerPage = () => {
                 />
               </div>
               <div className="lg:w-1/2 w-full flex items-center text-black text-2xl font-medium">
-                Email : suhadahmodkhan@gamil.com  
+                Email : {user?.email}
 
               </div>
             </div>
@@ -245,10 +253,24 @@ const BeATrainerPage = () => {
           </div>
         </div>
 
-       
-        <button type="submit" className="btn border-2 w-full border-[#860A35] bg-[#860A35] text-primary px-4 py-2 rounded-md">
-          Apply
+     {
+          userFound?.email  ? <div className='flex justify-center'> <h1 className='text-3xl font-semibold'>You Already applied for trainer post </h1> </div> : <dov>
+            {
+              userRoll?.role === 'trainer' ? <div className='flex justify-center'><h1 className='text-3xl font-semibold'>You are already became Trainer</h1></div> : <div>
+                {
+                    userRoll?.role === 'admin' ? <div className='flex justify-center'><h1 className='text-3xl font-semibold'>You are an admin</h1></div> : <div>
+                      <button type="submit" className="btn border-2 w-full border-[#860A35] bg-[#860A35] text-primary px-4 py-2 rounded-md"> 
+          Applied
         </button>
+                    </div>
+                    
+                }</div>
+            }
+          </dov>
+     }  
+    
+   
+      
       </form>
     </div>
   );

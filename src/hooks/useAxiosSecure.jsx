@@ -11,7 +11,7 @@ const useAxiosSecure = () => {
     const navigate = useNavigate();
     axiosSecure.interceptors.request.use(function (config){
         const token = localStorage.getItem('access-token');
-        console.log('tok tok tokewn' , token);
+        console.log('tok tok token' , token);
         config.headers.authorization = `Bearer ${token}`;
         return config;
     },function (error){

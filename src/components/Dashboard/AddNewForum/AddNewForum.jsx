@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import useUsers from "../../../hooks/useUsers";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+
 
 
 const AddNewForum = () => {
-    const axiosSecure = useAxiosSecure();
+   const axiosPublic = useAxiosPublic();
     const [presentUser , setPresentUser] = useState();
     const [users] = useUsers();
     const {user} = useContext(AuthContext);
@@ -23,7 +24,7 @@ const AddNewForum = () => {
         const photoURL = user?.photoURL ;
         const newForumInfo = {name , email , role , description , photoURL};
         console.log(newForumInfo);
-        axiosSecure.post('/newforums', newForumInfo)
+        axiosPublic.post('/newforums', newForumInfo)
         .then(res => {
             console.log(res?.data);
         })

@@ -26,18 +26,18 @@ const AllTrainers = () => {
       <th>
       <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+              <img src={trainer?.image} />
             </div>
           </div>
       </th>
       <td>
           <div>
-            <div className="font-bold">suhad</div>
+            <div className="font-bold">{trainer?.fullName}</div>
           </div>
       
       </td>
       <td>
-     <h1>suhadahmodkhan@gmail.com</h1>
+     <h1>{trainer?.email}</h1>
       </td>
       <td>
           <h1> unpaid</h1>

@@ -26,6 +26,10 @@ import BeATrainer from './components/TrainersPages/BeATrainer/BeATrainer.jsx';
 import AddNewForum from './components/Dashboard/AddNewForum/AddNewForum.jsx';
 import Forums from './components/Forum/Forums.jsx';
 import Trainer from './components/TrainersPages/Trainer/Trainer.jsx';
+import TrainerDetails from './components/TrainersPages/Trainer/TrainerDetails.jsx';
+import AddNewClass from './components/Dashboard/AddNewClass/AddNewClass.jsx';
+import AvailableSlot from './components/TrainersPages/Trainer/AvailableSlot.jsx';
+import AvailableSlotDetails from './components/TrainersPages/Trainer/AvailableSlotDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +46,20 @@ const router = createBrowserRouter([
       {
         path:'/beatrainer',
         element:<BeATrainer/>
+      },
+      {
+        path:"/trainerdetails/:id",
+        element:<TrainerDetails/>,
+        loader: ({params}) => fetch(`http://localhost:5000/trainers/${params?.id}`)
+      },
+      {
+        path:'/availableslot/:id',
+        element:<AvailableSlotDetails/>,
+        loader: ({params}) => fetch(`http://localhost:5000/newclass/id/${params?.id}`)
+      },
+      {
+        path:`/trainer/availabletimslot/:id`,
+        element:<AvailableSlot/>
       },
       {
         path:"/forums",
@@ -75,6 +93,10 @@ const router = createBrowserRouter([
             path:'/dashboard/addnewforum',
             element:<AddNewForum/>
           },
+          {
+            path:'/dashboard/addnewclass',
+            element:<AddNewClass/>
+          }
         
 
         ]
