@@ -2,7 +2,6 @@
 const RecommandedClass = () => {
     return (
         <div>
-            
         </div>
     );
 };

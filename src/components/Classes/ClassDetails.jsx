@@ -5,7 +5,7 @@ const ClassDetails = () => {
     console.log(classDetails);
     return (
         <div className="w-[40%] mx-auto">
-                    <h1>Class : {classDetails?.classType}</h1>
+                    <h1 className="font-semibold">Class : {classDetails?.classType}</h1>
             <p>Plan : {classDetails?.plan}</p>
 <p>Trainer Email : {classDetails?.trainerInfo?.email}</p>
 <p>Class Description : <br/>
