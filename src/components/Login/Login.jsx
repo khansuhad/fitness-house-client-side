@@ -57,8 +57,9 @@ const Login = () => {
               });
               const name = res?.user.displayName ;
               const email = res?.user.email ;
+              const image = res?.user.photoURL ;
               const role = 'member' ;
-              const userInfo = {name ,email ,role};
+              const userInfo = {name ,email ,role ,image};
 
               axiosPublic.post('/users', userInfo)
               .then(res => {

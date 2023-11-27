@@ -37,6 +37,7 @@ import ClassDetails from './components/Classes/ClassDetails.jsx';
 import RecommandedClass from './components/Dashboard/RecommandedClass/RecommandedClass.jsx';
 import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import PrivateRoute from './Route/PrivateRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/beatrainer',
-        element:<BeATrainer/>
+        element:<PrivateRoute><BeATrainer/></PrivateRoute>
       },
       {
         path:"/trainerdetails/:id",
@@ -62,12 +63,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/availableslot/:id',
-        element:<AvailableSlotDetails/>,
+        element:<PrivateRoute><AvailableSlotDetails/></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/newclass/id/${params?.id}`)
       },
       {
         path:`/trainer/availabletimslot/:id`,
-        element:<AvailableSlot/>
+        element:<PrivateRoute><AvailableSlot/></PrivateRoute>
       },
       {
         path:"/forums",
@@ -84,51 +85,51 @@ const router = createBrowserRouter([
       },
       {
         path:"/dashboard",
-        element:<Dashboard/>,
+        element:<PrivateRoute><Dashboard/></PrivateRoute>,
         children:[
           {
             path:'/dashboard',
-            element:<DashboardImg/>
+            element:<PrivateRoute><DashboardImg/></PrivateRoute>
           },
           {
             path:'/dashboard/activitylog',
-            element:<ActivityLog/>
+            element:<PrivateRoute><ActivityLog/></PrivateRoute>
           },
           {
             path:"/dashboard/recommendedclass",
-            element:<RecommandedClass/>
+            element:<PrivateRoute><RecommandedClass/></PrivateRoute>
           },
           {
             path:'/dashboard/allsubscribers',
-            element:<AllSubscribers/>
+            element:<PrivateRoute><AllSubscribers/></PrivateRoute>
           },
           {
             path:'/dashboard/alltrainers',
-            element:<AllTrainers/>
+            element:<PrivateRoute><AllTrainers/></PrivateRoute>
           },
           {
             path:'/dashboard/appliedtrainer',
-            element:<AppliedTrainer/>
+            element:<PrivateRoute><AppliedTrainer/></PrivateRoute>
           },
           {
             path:'/dashboard/balance',
-            element:<Balance/>
+            element:<PrivateRoute><Balance/></PrivateRoute>
           },
           {
             path:'/dashboard/addnewforum',
-            element:<AddNewForum/>
+            element:<PrivateRoute><AddNewForum/></PrivateRoute>
           },
           {
             path:'/dashboard/addnewclass',
-            element:<AddNewClass/>
+            element:<PrivateRoute><AddNewClass/></PrivateRoute>
           },
           {
               path:'/dashboard/manageslots',
-              element:<ManageSlots/>
+              element:<PrivateRoute><ManageSlots/></PrivateRoute>
           },
           {
             path:'/dashboard/managemember',
-            element:<ManageMembers/>
+            element:<PrivateRoute><ManageMembers/></PrivateRoute>
           }
         
 
