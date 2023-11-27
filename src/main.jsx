@@ -35,6 +35,7 @@ import ManageMembers from './components/Dashboard/ManageMembers/ManageMembers.js
 import Classes from './components/Classes/Classes.jsx';
 import ClassDetails from './components/Classes/ClassDetails.jsx';
 import RecommandedClass from './components/Dashboard/RecommandedClass/RecommandedClass.jsx';
+import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
           {
             path:'/dashboard',
             element:<DashboardImg/>
+          },
+          {
+            path:'/dashboard/activitylog',
+            element:<ActivityLog/>
           },
           {
             path:"/dashboard/recommendedclass",
