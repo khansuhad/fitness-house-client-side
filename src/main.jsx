@@ -31,6 +31,10 @@ import AddNewClass from './components/Dashboard/AddNewClass/AddNewClass.jsx';
 import AvailableSlot from './components/TrainersPages/Trainer/AvailableSlot.jsx';
 import AvailableSlotDetails from './components/TrainersPages/Trainer/AvailableSlotDetails.jsx';
 import ManageSlots from './components/Dashboard/ManageSlots/ManageSlots.jsx';
+import ManageMembers from './components/Dashboard/ManageMembers/ManageMembers.jsx';
+import Classes from './components/Classes/Classes.jsx';
+import ClassDetails from './components/Classes/ClassDetails.jsx';
+import RecommandedClass from './components/Dashboard/RecommandedClass/RecommandedClass.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -67,12 +71,25 @@ const router = createBrowserRouter([
         element:<Forums/>
       },
       {
+          path:"/classes",
+          element:<Classes/>
+      },
+      {
+        path:'/class/details/:id',
+        element:<ClassDetails/>,
+        loader: ({params}) =>  fetch(`http://localhost:5000/newclass/id/${params?.id}`)
+      },
+      {
         path:"/dashboard",
         element:<Dashboard/>,
         children:[
           {
             path:'/dashboard',
             element:<DashboardImg/>
+          },
+          {
+            path:"/dashboard/recommendedclass",
+            element:<RecommandedClass/>
           },
           {
             path:'/dashboard/allsubscribers',
@@ -101,6 +118,10 @@ const router = createBrowserRouter([
           {
               path:'/dashboard/manageslots',
               element:<ManageSlots/>
+          },
+          {
+            path:'/dashboard/managemember',
+            element:<ManageMembers/>
           }
         
 
