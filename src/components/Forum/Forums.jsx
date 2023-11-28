@@ -1,12 +1,30 @@
+import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useForums from "../../hooks/useForums";
 
 
 const Forums = () => {
-    const [forums] = useForums();
-    console.log(forums);
+    const axiosPublic = useAxiosPublic();
+    // const forum = useLoaderData();
+    const [forum] = useForums()
+   const  itemInPage = 1 ;
+   const forumLength = forum?.length ;
+    const page = Math.ceil(forumLength / itemInPage) ;
+    const pages = [...Array(page).keys()];
+    const [currentPage , setCurrentPage] = useState(0);
+    const [forums , setForums] = useState([])
+    console.log(pages);
+    useEffect(() => {
+        axiosPublic.get(`http://localhost:5000/newforums?page=${currentPage}&size=${itemInPage}`)
+        .then(res => {
+            const data = res?.data ;
+            setForums(data)
+        })
+    },[currentPage,axiosPublic])
     return (
-        <div>
-            <div className="flex justify-center items-center">
+        <div className="my-10">
+            <div className="flex justify-center items-center ">
                 <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">Forums</h1>
             </div>
             <div className="py-20">
@@ -30,6 +48,13 @@ const Forums = () => {
                     </div>)
                 }
             </div>
+            <div className="pagination flex justify-center items-center gap-1"> 
+            {
+                pages?.map((page , index) => <button
+                className={`${currentPage === page ? 'selected' : undefined } py-2 px-4 text-lg rounded bg-black text-white`}
+                onClick={() => setCurrentPage(page)}
+                 key={page}>{index + 1}</button>)
+            }  </div>
         </div>
     );
 };

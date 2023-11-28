@@ -72,7 +72,8 @@ const router = createBrowserRouter([
       },
       {
         path:"/forums",
-        element:<Forums/>
+        element:<Forums/>,
+        loader: () => fetch("http://localhost:5000/newforums")
       },
       {
           path:"/classes",

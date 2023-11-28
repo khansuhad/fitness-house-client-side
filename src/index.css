@@ -7,3 +7,8 @@ nav .active   {
   border-radius: 10px;
   /* font-size: bolder; */
 }
+.pagination .selected {
+  background-color: #860A35;
+  color: white;
+  
+}
