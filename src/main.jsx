@@ -39,6 +39,7 @@ import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import PrivateRoute from './Route/PrivateRoute.jsx';
 import ProfileSetting from './components/Dashboard/ProfileSetting/ProfileSetting.jsx';
+import GalleryPage from './components/GalleryPage/GalleryPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/newforums")
       },
       {
+        path:'/gallery',
+        element:<GalleryPage/>
+      },
+      {
           path:"/classes",
           element:<Classes/>
       },
@@ -97,6 +102,7 @@ const router = createBrowserRouter([
             path:'/dashboard/activitylog',
             element:<PrivateRoute><ActivityLog/></PrivateRoute>
           },
+       
           {
             path:"/dashboard/recommendedclass",
             element:<PrivateRoute><RecommandedClass/></PrivateRoute>
