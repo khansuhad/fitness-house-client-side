@@ -1,28 +1,28 @@
 import { useContext, useEffect, useState } from "react";
 import useBookedUser from "../../../hooks/useBookedUser";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import useUsers from "../../../hooks/useUsers";
 
 
 const ManageMembers = () => {
     const {user} = useContext(AuthContext);
     const email = user?.email ;
+    const [users] = useUsers();
     const [bookedUser] = useBookedUser({email});
     const [uniqueArray, setUniqueArray] = useState([]);
-  
+  console.log(bookedUser );
+  console.log(users );
   
     useEffect(() => {
+        const emailsInArray2 = bookedUser.map((obj) => obj?.bookedUser?.email);
+console.log(emailsInArray2);
 
-        if (bookedUser && bookedUser.length > 0) {
-          const uniqueEmailsMap = new Map();
-          bookedUser.forEach(item => {
-            uniqueEmailsMap.set(item.bookedUser.email, item);
-          });
-          const uniqueArrayResult = Array.from(uniqueEmailsMap.values());
-    
-          setUniqueArray(uniqueArrayResult);
-        }
+        const newArray = users.filter((obj) => emailsInArray2.includes(obj.email));
+        
+        console.log(newArray);
+        setUniqueArray(newArray);
        
-      }, [bookedUser]);
+      }, [bookedUser, users]);
     
     
     return (
@@ -48,18 +48,18 @@ const ManageMembers = () => {
   <th>
   <div className="avatar">
         <div className="mask mask-squircle w-12 h-12">
-          <img src={user?.bookedUser?.image} />
+          <img src={user?.image} />
         </div>
       </div>
   </th>
   <td>
       <div>
-        <div className="font-bold">{user?.bookedUser?.name}</div>
+        <div className="font-bold">{user?.name}</div>
       </div>
   
   </td>
   <td>
- <h1>{user?.bookedUser?.email}</h1>
+ <h1>{user?.email}</h1>
   </td>
   <td>
       <h1>unpaid</h1>
