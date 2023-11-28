@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import useTrainers from "../../../hooks/useTrainers";
 import TrainerAvailability from "../BeATrainer/WeekDef";
 import TimeSlot from "../BeATrainer/WeekDef";
+import { Helmet } from "react-helmet";
 
 
 const TrainerDetails = () => {
@@ -46,6 +47,9 @@ const TrainerDetails = () => {
     return (
      
         <div className="w-[40%] mx-auto">
+                <Helmet>
+            <title> Fitness house | Trainer Details </title>
+          </Helmet>
             <div className="px-10">
                 <img src={details?.image} alt="" className="w-96  " />
             </div>

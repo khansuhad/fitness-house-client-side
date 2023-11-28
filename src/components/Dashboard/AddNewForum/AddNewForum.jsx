@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useUsers from "../../../hooks/useUsers";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet";
 
 
 
@@ -32,6 +33,9 @@ const AddNewForum = () => {
     }
     return (
         <div className="lg:mx-12 mx-4  py-10" id="about">
+                  <Helmet>
+            <title> Fitness house | New Forums </title>
+          </Helme>
         <div className="flex justify-center">
                 <h1 className="text-4xl font-semibold text-primary italic">Add New Forum</h1>
             </div>

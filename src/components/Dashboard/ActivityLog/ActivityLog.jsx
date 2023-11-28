@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useActivityLogClass from "../../../hooks/useActivityLogClass";
 import moment from "moment";
+import { Helmet } from "react-helmet";
 
 const ActivityLog = () => {
     const {user} = useContext(AuthContext);
@@ -22,6 +23,9 @@ const ActivityLog = () => {
    console.log(noActivity);
     return (
        <div>
+              <Helmet>
+            <title> Fitness house | Activity Log </title>
+          </Helmet>
   <div className=" flex justify-center items-center mt-20">
   {
 noActivity === 0 && <div className=" flex justify-center  text-5xl font-semibold text-center">

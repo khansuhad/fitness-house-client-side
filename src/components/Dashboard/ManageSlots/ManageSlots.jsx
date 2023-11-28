@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import useBookedClasses from "../../../hooks/useBookedClasses";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const ManageSlots = () => {
     const {user } = useContext(AuthContext)
@@ -16,6 +17,9 @@ const ManageSlots = () => {
    
     return (
         <div className="grid grid-cols-7 gap-5 w-[80%] mx-auto mt-10">
+                <Helmet>
+            <title> Fitness house | Manage Slots </title>
+          </Helmet>
             {
                 bookedClasses[0]?.timeSlots?.map((timeSlot , index) => <div key={timeSlot}>
                     <div className="border-2 text-center border-black text-black rounded py-5">

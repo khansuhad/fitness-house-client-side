@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import useSubscribers from "../../../hooks/useSubscribers";
 
 const AllSubscribers = () => {
   const [subscribers] = useSubscribers();
     return (
         <div className="bg-navmenu min-h-screen p-10">
+                <Helmet>
+            <title> Fitness house | All Subscribers </title>
+          </Helmet>
             <div className="flex justify-center">
                 <h1 className="text-4xl font-semibold text-primary italic">All Subscribers : {subscribers?.length} </h1>
             </div>

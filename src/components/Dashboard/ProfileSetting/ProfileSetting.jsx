@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useUsers from "../../../hooks/useUsers";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 const ProfileSetting = () => {
     const axiosSecure = useAxiosSecure();
@@ -28,6 +29,9 @@ const ProfileSetting = () => {
     }
     return (
         <div className="lg:mx-12 mx-4 mt-40 py-10" id="about">
+                  <Helmet>
+            <title> Fitness house | Profile Setting </title>
+          </Helmet>
         <h1 className="text-primary w-fit mx-auto md:text-5xl text-4xl font-bold text-center flex">---<h2 className=" border-4  p-2 border-primary rounded italic ">Profile Setting </h2>---</h1>
         <div className="py-10">
             <form onSubmit={handleUpdate}>

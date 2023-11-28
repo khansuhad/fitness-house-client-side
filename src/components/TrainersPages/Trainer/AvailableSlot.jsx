@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import useTrainers from "../../../hooks/useTrainers";
 import useTrainerClasses from "../../../hooks/useTrainerClasses";
+import { Helmet } from "react-helmet";
 
 
 const AvailableSlot = () => {
@@ -10,6 +11,9 @@ const AvailableSlot = () => {
 
     return (
         <div className="grid grid-cols-4 gap-5 w-[80%] mx-auto mt-20">
+                <Helmet>
+            <title> Fitness house | Available Slot </title>
+          </Helmet>
             {
                 trainerClasses?.map(trainerClass => <div key={trainerClass._id}>
                     <div className="card bg-base-100 shadow-xl">

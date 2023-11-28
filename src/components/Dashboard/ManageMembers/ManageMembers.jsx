@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useBookedUser from "../../../hooks/useBookedUser";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useUsers from "../../../hooks/useUsers";
+import { Helmet } from "react-helmet";
 
 
 const ManageMembers = () => {
@@ -27,6 +28,9 @@ console.log(emailsInArray2);
     
     return (
         <div className="bg-navmenu min-h-screen p-10">
+                <Helmet>
+            <title> Fitness house | Manage Member </title>
+          </Helmet>
         <div className="flex justify-center">
             <h1 className="text-4xl font-semibold text-primary italic">All users : {uniqueArray?.length} </h1>
         </div>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const ClassDetails = () => {
@@ -5,6 +6,9 @@ const ClassDetails = () => {
     console.log(classDetails);
     return (
         <div className="w-[40%] mx-auto">
+                  <Helmet>
+            <title> Fitness house | Class Details </title>
+          </Helmet>
                     <h1 className="font-semibold">Class : {classDetails?.classType}</h1>
             <p>Plan : {classDetails?.plan}</p>
 <p>Trainer Email : {classDetails?.trainerInfo?.email}</p>

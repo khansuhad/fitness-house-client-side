@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import useTrainers from "../../../hooks/useTrainers";
 import { FaFacebook } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Trainer = () => {
   const [trainers] = useTrainers();
   console.log(trainers);
   return (
     <div className="w-[80%] mx-auto">
+            <Helmet>
+            <title> Fitness house | Trainer </title>
+          </Helmet>
       <div className="flex justify-center items-center">
         <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">
           Trainers

@@ -1,4 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const getImages = async ({ pageParam = 0 }) => {
@@ -33,6 +34,9 @@ console.log(data);
 
     return (
         <div>
+                  <Helmet>
+            <title> Fitness house | Gallery </title>
+          </Helmet>
             <InfiniteScroll
                 dataLength={ images ? images.length : 0 }
                 next={ () => fetchNextPage() }

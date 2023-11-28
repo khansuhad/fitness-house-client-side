@@ -4,6 +4,7 @@ import TimeSlotManager from '../BeATrainer/Timslots';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import useUsers from '../../../hooks/useUsers';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { Helmet } from 'react-helmet';
 
 const AvailableSlotDetails = () => {
     const axiosSecure = useAxiosSecure();
@@ -38,6 +39,9 @@ const AvailableSlotDetails = () => {
 
     return (
         <div className="w-[40%] mx-auto">
+                <Helmet>
+            <title> Fitness house | Available Slot Details </title>
+          </Helmet>
         <div>
             <h1>Class : {details?.classType}</h1>
             <p>Plan : {details?.plan}</p>

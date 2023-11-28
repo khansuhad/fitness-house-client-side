@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import useRecommandedClass from "../../../hooks/useRecommandedClass";
+import { Helmet } from "react-helmet";
 
 const RecommandedClass = () => {
     const [recommendedClass]  = useRecommandedClass();
     console.log(recommendedClass);
     return (
         <div className="grid grid-cols-4 gap-5 w-[80%] mx-auto mt-20">
+                  <Helmet>
+            <title> Fitness house | Recommanded Class </title>
+          </Helmet>
         {
             recommendedClass?.map(Class => <div key={Class._id}>
                 <div className="card bg-base-100 shadow-xl">

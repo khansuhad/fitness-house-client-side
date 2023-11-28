@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useForums from "../../hooks/useForums";
+import { Helmet } from "react-helmet";
 
 
 const Forums = () => {
@@ -24,6 +25,9 @@ const Forums = () => {
     },[currentPage,axiosPublic])
     return (
         <div className="my-10">
+                  <Helmet>
+            <title> Fitness house | Forums </title>
+          </Helmet>
             <div className="flex justify-center items-center ">
                 <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">Forums</h1>
             </div>

@@ -3,6 +3,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useTrainers from "../../../hooks/useTrainers";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet";
 
 
 
@@ -37,6 +38,9 @@ const [trainers] = useTrainers();
     }
     return (
         <div className="lg:mx-12 mx-4  py-10" id="about">
+                <Helmet>
+            <title> Fitness house | Add New Classes </title>
+          </Helmet>
         <div className="flex justify-center">
                 <h1 className="text-4xl font-semibold text-primary italic">Add New Class</h1>
             </div>

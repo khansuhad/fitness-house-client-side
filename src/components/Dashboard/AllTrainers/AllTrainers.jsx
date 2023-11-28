@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import useTrainers from "../../../hooks/useTrainers";
 
 
@@ -5,6 +6,9 @@ const AllTrainers = () => {
   const [trainers] = useTrainers();
     return (
         <div className="bg-navmenu min-h-screen p-10">
+                <Helmet>
+            <title> Fitness house | All Trainers </title>
+          </Helmet>
             <div className="flex justify-center">
                 <h1 className="text-4xl font-semibold text-primary italic">All Trainers : {trainers?.length} </h1>
             </div>

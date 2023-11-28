@@ -2,6 +2,7 @@ import { FaEye } from "react-icons/fa";
 import useAppiledTrainers from "../../../hooks/useAppiledTrainers";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useUsers from "../../../hooks/useUsers";
+import { Helmet } from "react-helmet";
 
 const AppliedTrainer = () => {
   const axiosSecure = useAxiosSecure();
@@ -28,6 +29,9 @@ const AppliedTrainer = () => {
   }
     return (
         <div className="bg-navmenu min-h-screen p-10">
+                <Helmet>
+            <title> Fitness house | Applied Trainers </title>
+          </Helmet>
         <div className="flex justify-center">
             <h1 className="text-4xl font-semibold text-primary italic">All Applied Trainers : {appliedTrainers?.length} </h1>
         </div>
