@@ -38,6 +38,7 @@ import RecommandedClass from './components/Dashboard/RecommandedClass/Recommande
 import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import PrivateRoute from './Route/PrivateRoute.jsx';
+import ProfileSetting from './components/Dashboard/ProfileSetting/ProfileSetting.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -131,6 +132,10 @@ const router = createBrowserRouter([
           {
             path:'/dashboard/managemember',
             element:<PrivateRoute><ManageMembers/></PrivateRoute>
+          },
+          {
+            path:"/dashboard/profilesetting",
+            element:<PrivateRoute><ProfileSetting/></PrivateRoute>
           }
         
 

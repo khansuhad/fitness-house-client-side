@@ -8,8 +8,10 @@ const ManageMembers = () => {
     const email = user?.email ;
     const [bookedUser] = useBookedUser({email});
     const [uniqueArray, setUniqueArray] = useState([]);
-
+  
+  
     useEffect(() => {
+
         if (bookedUser && bookedUser.length > 0) {
           const uniqueEmailsMap = new Map();
           bookedUser.forEach(item => {
@@ -19,13 +21,14 @@ const ManageMembers = () => {
     
           setUniqueArray(uniqueArrayResult);
         }
+       
       }, [bookedUser]);
     
-    console.log(uniqueArray);
+    
     return (
         <div className="bg-navmenu min-h-screen p-10">
         <div className="flex justify-center">
-            <h1 className="text-4xl font-semibold text-primary italic">All users : {bookedUser?.length} </h1>
+            <h1 className="text-4xl font-semibold text-primary italic">All users : {uniqueArray?.length} </h1>
         </div>
         <div className="overflow-x-auto mt-10">
 <table className="table">
