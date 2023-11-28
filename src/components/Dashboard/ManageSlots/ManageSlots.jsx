@@ -22,22 +22,22 @@ const ManageSlots = () => {
           </Helmet>
             {
                 bookedClasses[0]?.timeSlots?.map((timeSlot , index) => <div key={timeSlot}>
-                    <div className="border-2 text-center border-black text-black rounded py-5">
-                        <h1>Slot : {index + 1}</h1>
-                        <h1>{timeSlot?.start} - {timeSlot?.end}</h1>
+                    <div className={` text-center ${isSlotBooked(index) ? 'bg-gradient-to-r from-green-600 to-green-900' : 'bg-gradient-to-r from-red-600 to-red-900'} text-White rounded py-5 h-40 w-40`}>
+                        <h1 className="font-bold text-xl text-white">Slot : {index + 1}</h1>
+                        <h1 className="font-bold  text-white">{timeSlot?.start} - {timeSlot?.end}</h1>
                         {isSlotBooked(index) && <div>
-                            <p>Booked!</p> 
+                            <p className="font-bold  text-white">Booked!</p> 
                             <div onClick={() => openModal(index)}
-                             > <button className="btn bg-primary text-dashmenu hover:text-black" onClick={()=>document.getElementById(`${selectedSlotDetails?._id}`).showModal()}> Click Who Booked</button></div>
+                             > <button className="btn bg-primary text-dashmenu border-none hover:text-black" onClick={()=>document.getElementById(`${selectedSlotDetails?._id}`).showModal()}> Click Who Booked</button></div>
                              <dialog id={`${selectedSlotDetails?._id}`} className="modal">
 <div className="modal-box rounded">
 <div className="card card-compact p-3">
 {/* <figure><img src={appliedTrainer?.image} alt="Shoes" className="w-44 h-44"  /></figure> */}
-<div className="card-body">
-  <h2 className="card-title">Full Name :{selectedSlotDetails?.selectedSlot?.slotNumber}</h2>
-  <h2 className="">Full Name :{selectedSlotDetails?.selectedSlot?.timeSlot}</h2>
-  <p>Email :{selectedSlotDetails?.bookedUser.name}</p>
-  <p>Email :{selectedSlotDetails?.bookedUser.email}</p>
+<div className="card-body font-medium ">
+  <h2 className=""> Slot : {selectedSlotDetails?.selectedSlot?.slotNumber}</h2>
+  <h2 className="">Time Slot : {selectedSlotDetails?.selectedSlot?.timeSlot}</h2>
+  <p>Name : {selectedSlotDetails?.bookedUser.name}</p>
+  <p>Email : {selectedSlotDetails?.bookedUser.email}</p>
   {/* <p>Age : {appliedTrainer?.age}</p> */}
  
   <div className="flex gap-5 justify-center items-center">

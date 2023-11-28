@@ -35,7 +35,7 @@ const AddNewForum = () => {
         <div className="lg:mx-12 mx-4  py-10" id="about">
                   <Helmet>
             <title> Fitness house | New Forums </title>
-          </Helme>
+          </Helmet>
         <div className="flex justify-center">
                 <h1 className="text-4xl font-semibold text-primary italic">Add New Forum</h1>
             </div>

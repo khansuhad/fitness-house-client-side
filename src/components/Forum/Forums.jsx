@@ -24,7 +24,8 @@ const Forums = () => {
         })
     },[currentPage,axiosPublic])
     return (
-        <div className="my-10">
+        <div className="py-10">
+            <div className="my-10 ">
                   <Helmet>
             <title> Fitness house | Forums </title>
           </Helmet>
@@ -44,8 +45,7 @@ const Forums = () => {
                                     <h1>{forum?.email}</h1>
                                 </div>
                             </div>
-                            <div className="text-xl font-normal py-4">
-                                <h1 className="font-semibold text-2xl mb-1">Blog :</h1>
+                            <div className="text-xl font-normal py-4 text-left">
                                 <p>{forum?.description}</p>
                             </div>
                             <div className="divider"></div>
@@ -59,6 +59,7 @@ const Forums = () => {
                 onClick={() => setCurrentPage(page)}
                  key={page}>{index + 1}</button>)
             }  </div>
+        </div>
         </div>
     );
 };

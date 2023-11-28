@@ -4,7 +4,7 @@ import AllClasses from "./AllClasses";
 
 const Classes = () => {
     return (
-        <div>
+        <div className="py-10">
                   <Helmet>
             <title> Fitness house | Classes </title>
           </Helmet>

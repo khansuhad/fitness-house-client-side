@@ -1,4 +1,4 @@
-import TimeSlotManager from "./Timslots";
+import TimeSlotManager from "./TimeSlotManager";
 
 const TimeSlot = ({firstTime , secondTime}) => {
 

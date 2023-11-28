@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import TimeSlotManager from '../BeATrainer/Timslots';
+import TimeSlotManager from '../BeATrainer/TimeSlotManager';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import useUsers from '../../../hooks/useUsers';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
@@ -28,7 +28,9 @@ const AvailableSlotDetails = () => {
   const handleJoinNow = (e) => {
     e.preventDefault();
     const JoinNowForm = {selectedSlot , bookedUser , details , timeSlots}
-    console.log(JoinNowForm);
+    if(!selectedSlot?.slotNumber){
+     return
+    }
     axiosSecure.post('/bookedclasses' , JoinNowForm)
     .then(res => {
         console.log(res?.data);
@@ -38,25 +40,26 @@ const AvailableSlotDetails = () => {
   
 
     return (
-        <div className="w-[40%] mx-auto">
+     <div className='py-20'>
+         <div className="w-[80%] mx-auto py-10 pl-10 rounded border-4 border-primary bg-white">
                 <Helmet>
             <title> Fitness house | Available Slot Details </title>
           </Helmet>
         <div>
-            <h1>Class : {details?.classType}</h1>
-            <p>Plan : {details?.plan}</p>
-<p>Trainer Email : {details?.trainerInfo?.email}</p>
-<p>Class Description : <br/>
+            <h1 className='text-2xl font-semibold mt-1'>Class : {details?.classType}</h1>
+            <p className='text-xl font-normal mt-1'>Plan : {details?.plan}</p>
+<p className='text-xl font-normal mt-1'>Trainer Email : {details?.trainerInfo?.email}</p>
+<p className='text-xl font-normal mt-1'>Class Description : <br/>
      {details?.classDescription}</p>
-<div>
+<div className='text-xl font-medium mt-1'>
     <form action="" onSubmit={handleJoinNow}>
     <div>
-      <h2>Available Slots : </h2>
+      <h2 className='text-xl font-medium mt-1'>Available Slots : </h2>
  <div className='flex flex-wrap gap-3'>
  {timeSlots.map((option , index) => (
         <div key={index} className='flex gap-2'>
           <input
-          required
+           defaultChecked
             type="radio"
             id={index}
             value={option.start + '-' + option.end}
@@ -67,9 +70,9 @@ const AvailableSlotDetails = () => {
         </div>
       ))}
  </div>
-      <p>Selected Slot: {selectedSlot?.timeSlot}</p>
+      <p className='text-xl font-medium mt-1'>Selected Slot: {selectedSlot?.timeSlot}</p>
     </div>
-<div>
+<div className='text-xl font-medium mt-1'>
       <h2>Training Day : </h2>
  <div className='flex flex-wrap gap-3'>
  {details?.trainerInfo?.availableTimeWeek && details?.trainerInfo?.availableTimeWeek.map((option , index) => (
@@ -79,12 +82,15 @@ const AvailableSlotDetails = () => {
       ))}
  </div> 
     </div>
-    <button type='submit' className='btn btn-primary'>Join Now</button>
+{
+  user?.role === 'member' ?     <button type='submit' className='border-2 mt-5 hover:border-none px-4 py-2 transition-all duration-500 border-black font-semibold w-fit  rounded my-2 hover:bg-primary hover:text-white'>Join Now</button> : <h1> Only member can booked classes <h1/>
+}
     </form>
 </div>
 
         </div>
     </div>
+     </div>
     );
 };
 

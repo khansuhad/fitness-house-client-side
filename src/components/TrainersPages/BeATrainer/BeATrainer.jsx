@@ -1,11 +1,10 @@
 import { Helmet } from "react-helmet";
-import WeekDef from "./WeekDef";
-import BeATrainerPage from "./someething";
+import BeATrainerPage from "./BeATrainerPage";
 
 
 const BeATrainer = () => {
     return (
-        <div>
+        <div className="py-10">
                   <Helmet>
             <title> Fitness house | Be a Trainer </title>
           </Helmet>

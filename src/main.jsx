@@ -39,7 +39,6 @@ import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import PrivateRoute from './Route/PrivateRoute.jsx';
 import ProfileSetting from './components/Dashboard/ProfileSetting/ProfileSetting.jsx';
-import GalleryPage from './components/GalleryPage/GalleryPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",

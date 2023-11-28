@@ -10,24 +10,26 @@ const AvailableSlot = () => {
     const [trainerClasses] = useTrainerClasses({email});
 
     return (
-        <div className="grid grid-cols-4 gap-5 w-[80%] mx-auto mt-20">
+       <div className="py-10">
+         <div className="grid grid-cols-4 gap-5 w-[80%] mx-auto mt-20">
                 <Helmet>
             <title> Fitness house | Available Slot </title>
           </Helmet>
             {
                 trainerClasses?.map(trainerClass => <div key={trainerClass._id}>
-                    <div className="card bg-base-100 shadow-xl">
+                    <div className={`card ${trainerClass?.plan === 'Silver' && 'bg-slate-400 text-black'} ${trainerClass?.plan === 'Diamond' && 'bg-[#EEE2DE] text-black'} ${trainerClass?.plan === 'Gold' && 'bg-[#F5CCA0] text-black'}  shadow-xl`}>
   <div className="card-body flex flex-col gap-3 justify-center text-center py-10">
     <h2 className="">{trainerClass?.classType}</h2>
     <p>{trainerClass?.plan}</p>
-    <div className="">
+  
       <Link to={`/availableslot/${trainerClass?._id}`} className="btn btn-primary">Plan Details</Link>
-    </div>
+   
   </div>
 </div>
                 </div>)
             }
         </div>
+       </div>
     );
 };
 

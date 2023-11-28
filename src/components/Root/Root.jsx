@@ -7,7 +7,7 @@ const Root = () => {
     return (
         <div>
             <Navbar/>
-         <div className="min-h-[80vh]">
+         <div className="min-h-[80vh] bg-[#EEE2DE] ">
          <Outlet></Outlet>
          </div>
             <Footer/>

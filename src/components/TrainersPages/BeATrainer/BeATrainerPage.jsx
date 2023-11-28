@@ -76,7 +76,7 @@ const BeATrainerPage = () => {
   };
 
   return (
-    <div className="container w-[80%] mx-auto mt-8">
+    <div className="container w-[80%] mx-auto mt-8 bg-white border-4 border-primary p-5">
       <h2 className="text-2xl font-bold mb-4">Become a Trainer</h2>
       <form onSubmit={handleSubmit}>
       

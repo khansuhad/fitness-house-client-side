@@ -12,12 +12,12 @@ const RecommandedClass = () => {
           </Helmet>
         {
             recommendedClass?.map(Class => <div key={Class._id}>
-                <div className="card bg-base-100 shadow-xl">
-<div className="card-body flex flex-col gap-3 justify-center text-center py-10">
-<h2 className="">{Class?.classType}</h2>
-<p>{Class?.plan}</p>
-<div className="">
-  <Link to={`/class/details/${Class?._id}`} className="btn btn-primary">Plan Details</Link>
+                     <div className={`card ${Class?.plan === 'Silver' && 'bg-slate-400 text-black'} ${Class?.plan === 'Diamond' && 'bg-[#EEE2DE] text-black'} ${Class?.plan === 'Gold' && 'bg-[#F5CCA0] text-black'}  shadow-xl`}>
+<div className="card-body   justify-center text-center py-10">
+<h2 className="font-semibold text-xl">Class : {Class?.classType}</h2>
+<p className="font-medium text-lg">Plan : {Class?.plan}</p>
+<div className="mt-4">
+  <Link to={`/class/details/${Class?._id}`} className="bg-[#860A35]  px-4 py-2 rounded hover:bg-body transition-all duration-700 text-xl font-medium text-white">Plan Details</Link>
 </div>
 </div>
 </div>
