@@ -18,8 +18,19 @@ const ActivityLog = () => {
         });
         setTodayTrainers(filteredTrainers);
     }, [activityClass , currentDay]);
+   const noActivity = todayTrainers?.length ;
+   console.log(noActivity);
     return (
-        <div className="w-[90%] mx-auto grid grid-cols-2 gap-10 mt-10">
+       <div>
+  <div className=" flex justify-center items-center mt-20">
+  {
+noActivity === 0 && <div className=" flex justify-center  text-5xl font-semibold text-center">
+<h1>No Activity's for today</h1>
+</div>
+            }
+  </div>
+         <div className="w-[90%] mx-auto grid grid-cols-2 gap-10 mt-10">
+   
             {
                 todayTrainers?.map(activity => <div key={activity?._id} className="border-2 border-black rounded pl-5 py-5">
                     <h1>Class : {activity?.details?.classType}</h1>
@@ -33,6 +44,7 @@ const ActivityLog = () => {
                 </div>)
             }
         </div>
+       </div>
     );
 };
 
