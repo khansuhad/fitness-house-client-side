@@ -82,9 +82,15 @@ const AvailableSlotDetails = () => {
       ))}
  </div> 
     </div>
-{
-  user?.role === 'member' ?     <button type='submit' className='border-2 mt-5 hover:border-none px-4 py-2 transition-all duration-500 border-black font-semibold w-fit  rounded my-2 hover:bg-primary hover:text-white'>Join Now</button> : <h1> Only member can booked classes <h1/>
-}
+
+      {
+        user?.role === 'member' &&     <button type='submit' className='border-2 mt-5 hover:border-none px-4 py-2 transition-all duration-500 border-black font-semibold w-fit  rounded my-2 hover:bg-primary hover:text-white'>Join Now</button>
+      }
+      {
+        user?.role !== 'member' &&     <div  className='border-2 mt-5 hover:border-none px-4 py-2 transition-all duration-500 border-black font-semibold w-fit  rounded my-2 hover:bg-primary hover:text-white'>Only member can booked claseses</div>
+      }
+
+
     </form>
 </div>
 

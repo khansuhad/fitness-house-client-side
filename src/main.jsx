@@ -29,7 +29,6 @@ import Trainer from './components/TrainersPages/Trainer/Trainer.jsx';
 import TrainerDetails from './components/TrainersPages/Trainer/TrainerDetails.jsx';
 import AddNewClass from './components/Dashboard/AddNewClass/AddNewClass.jsx';
 import AvailableSlot from './components/TrainersPages/Trainer/AvailableSlot.jsx';
-import AvailableSlotDetails from './components/TrainersPages/Trainer/AvailableSlotDetails.jsx';
 import ManageSlots from './components/Dashboard/ManageSlots/ManageSlots.jsx';
 import ManageMembers from './components/Dashboard/ManageMembers/ManageMembers.jsx';
 import Classes from './components/Classes/Classes.jsx';
@@ -39,6 +38,8 @@ import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import PrivateRoute from './Route/PrivateRoute.jsx';
 import ProfileSetting from './components/Dashboard/ProfileSetting/ProfileSetting.jsx';
+import AvailableSlotDetails from './components/TrainersPages/Trainer/AvaiableSlotDetails.jsx';
+import GalleryPage from './components/Gallery/GalleryPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",

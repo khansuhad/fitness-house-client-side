@@ -47,7 +47,7 @@ console.log(data);
                     { images &&
                         images.map((article, idx) => {
                             return (
-                                <div className=' bg-slate-200 rounded h-[50vh]' key={ idx }>
+                               <div className=' bg-slate-200 rounded h-[50vh]' key={ idx }>
                                     <img src={article.image} alt="" className='w--full h-full rounded' />
                                 </div>
                             )
