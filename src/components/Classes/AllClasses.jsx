@@ -7,7 +7,7 @@ const AllClasses = () => {
     const [classes] = useClasses();
     console.log(classes);
     return (
-        <div className="grid grid-cols-4 gap-5 w-[80%] mx-auto mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-[80%] mx-auto mt-20">
         {
             classes?.map(Class => <div key={Class._id}>
                 <div className={`card ${Class?.plan === 'Silver' && 'bg-slate-400 text-black'} ${Class?.plan === 'Diamond' && 'bg-[#EEE2DE] text-black'} ${Class?.plan === 'Gold' && 'bg-[#F5CCA0] text-black'}  shadow-xl`}>

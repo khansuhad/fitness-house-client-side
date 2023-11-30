@@ -34,7 +34,7 @@ const AppliedTrainer = () => {
         timer: 1500
       });
       console.log(res?.data);
-      navigate('/alltrainers')
+      navigate('/dashboard/alltrainers')
     })
 
   }
@@ -85,9 +85,9 @@ const AppliedTrainer = () => {
 <div className="card card-compact p-3">
 <figure><img src={appliedTrainer?.image} alt="Shoes" className="w-44 h-44"  /></figure>
 <div className="card-body">
-  <h2 className="card-title">Full Name :{appliedTrainer?.fullName}</h2>
-  <p>Email :{appliedTrainer?.email}</p>
-  <p>Age : {appliedTrainer?.age}</p>
+  <h2 className="card-title">Full Name : {appliedTrainer?.fullName}</h2>
+  <p>Email : {appliedTrainer?.email}</p>
+  <p>Age : {appliedTrainer?.age} years</p>
   <p>Skills : 
     <ul className="list-disc">
      {
@@ -100,15 +100,13 @@ const AppliedTrainer = () => {
     }
     </div></p>
   <p>Available in a day : {appliedTrainer?.availableFirstTimeDay}{appliedTrainer?.firstTimeFormat} - {appliedTrainer?.availableSecondTimeDay}{appliedTrainer?.secondTimeFormat}</p>
-  <div className="flex gap-5 justify-center items-center">
-      <button onClick={() => handleConfirmation(appliedTrainer?._id,appliedTrainer?.email)} className="btn">Confirmation</button>
-      <button className="btn">Reject</button>
-  <div className="modal-action">
+  <div className="flex gap-5 justify-center items-center mt-5">
+      <button onClick={() => handleConfirmation(appliedTrainer?._id,appliedTrainer?.email)} className="btn bg-primary text-white hover:text-black">Confirmation</button>
+      <button className="btn bg-primary text-white hover:text-black">Reject</button>
     <form method="dialog">
-     
-      <button className="btn">Close</button>
+      <button className="btn bg-primary text-white hover:text-black">Close</button>
     </form>
-  </div>
+
   </div>
 </div>
 </div>

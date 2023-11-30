@@ -17,7 +17,7 @@ const Forums = () => {
     const [forums , setForums] = useState([])
     console.log(pages);
     useEffect(() => {
-        axiosPublic.get(`http://localhost:5000/newforums?page=${currentPage}&size=${itemInPage}`)
+        axiosPublic.get(`/newforums?page=${currentPage}&size=${itemInPage}`)
         .then(res => {
             const data = res?.data ;
             setForums(data)

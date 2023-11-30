@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='bg-base-200 text-gray-800 z-30'>
-   <footer className="footer footer-start p-10 text-xl flex items-center justify-between w-[70%] mx-auto  ">
+   <footer className="footer  footer-start p-10 text-xl lg:flex items-center justify-between w-[70%] mx-auto  ">
   <aside>
 <img src="https://i.ibb.co/Jntk2zH/Whats-App-Image-2023-11-23-at-8-00-34-PM-1-removebg-preview.png" alt="" className='h-20 w-56 rounded' />
     <p className="font-normal">

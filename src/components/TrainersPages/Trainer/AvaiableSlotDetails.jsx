@@ -9,12 +9,10 @@ import Swal from 'sweetalert2';
 
 const AvailableSlotDetails = () => {
     const axiosSecure = useAxiosSecure();
-    const {user , loader } = useContext(AuthContext);
+    const {user } = useContext(AuthContext);
     const [users] = useUsers();
     const bookedUser = users?.find(users => users?.email === user?.email);
-    console.log(bookedUser);
     const details = useLoaderData();
-    console.log(details);
     const [selectedSlot, setSelectedSlot] = useState({});
     console.log(selectedSlot);
   const handleTimeSlot = (timeSlot , slotNumber ) => {
@@ -30,6 +28,13 @@ const AvailableSlotDetails = () => {
     e.preventDefault();
     const JoinNowForm = {selectedSlot , bookedUser , details , timeSlots}
     if(!selectedSlot?.slotNumber){
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "slot select required",
+        showConfirmButton: false,
+        timer: 1500
+      });
      return
     }
     axiosSecure.post('/bookedclasses' , JoinNowForm)
@@ -46,7 +51,7 @@ const AvailableSlotDetails = () => {
     
   }
   
-
+console.log(user?.role);
     return (
      <div className='py-20'>
          <div className="w-[80%] mx-auto py-10 pl-10 rounded border-4 border-primary bg-white">
@@ -93,11 +98,22 @@ const AvailableSlotDetails = () => {
 </div>
 
   {
-    user?.role === 'member' &&     <button type='submit' className='border-2 mt-5 hover:border-none px-4 py-2 transition-all duration-500 border-black font-semibold w-fit  rounded my-2 hover:bg-primary hover:text-white'>Join Now</button>
+    bookedUser?.role === 'member' ?    <div>
+      <button type='submit' className='border-2 mt-5 hover:border-none px-4 py-2 transition-all duration-500 border-black font-semibold w-fit  rounded my-2 hover:bg-primary hover:text-white'>Join Now</button>
+    </div> : 
+  <div>
+      {
+      bookedUser?.role === 'trainer' ?   <div  className=' mt-5    font-semibold w-fit  rounded my-2 '>*Only member can booked claseses</div> :
+      <div>
+        {
+      bookedUser?.role === 'admin' &&     <div  className=' mt-5    font-semibold w-fit  rounded my-2 '>*Only member can booked claseses</div>
+    }
+      </div>
+    }
+  </div>
+    
   }
-  {
-    user?.role !== 'member' &&     <div  className=' mt-5    font-semibold w-fit  rounded my-2 '>*Only member can booked claseses</div>
-  }
+
 
 
 </form>

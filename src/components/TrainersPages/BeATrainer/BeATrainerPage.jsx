@@ -18,6 +18,28 @@ const BeATrainerPage = () => {
     skills: [],
     availableTimeWeek: []
    });
+   const fitnessTrainerSkills = [
+    'Exercise Programming',
+    'Nutritional Guidance',
+    'Client Assessment',
+    'Motivational Coaching',
+    'Communication',
+    'Anatomy and Physiology',
+    'Form Correction',
+    'Flexibility Training',
+    'Injury Prevention',
+    'Goal Setting',
+    'Cardiovascular Conditioning',
+    'Strength and Resistance Training',
+    'Functional Training',
+    'Yoga Instruction',
+    'Pilates Instruction',
+    'Weight Management',
+    'Client Education',
+    'Program Customization',
+    'Progress Tracking',
+    'Time Management',
+  ];
   console.log(appliedTrainers);
   console.log(userFound);
  useEffect(() => {
@@ -218,7 +240,7 @@ const BeATrainerPage = () => {
           </label>
           <div className="flex flex-wrap">
   
-            {['Cardio', 'Strength Training', 'Yoga', 'Pilates'].map((skill) => (
+            {fitnessTrainerSkills?.map((skill) => (
               <div key={skill} className="mr-4 mb-2">
                 <input
                   type="checkbox"

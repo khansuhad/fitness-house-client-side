@@ -60,13 +60,13 @@ const Register = () => {
   
       createUser(email, password)
         .then((res) => {
-          const user = res.user;
+          const user = res?.user;
           updateProfile(user, {
             displayName: name,
             photoURL: image,
           })
             .then(() => {
-              setUser({ ...user, displayName: name, photoURL: photoURL });
+              setUser({ ...user, displayName: name, photoURL: image });
               Swal.fire({
                 position: "top-end",
                 icon: "success",
@@ -84,7 +84,7 @@ const Register = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "error",
-                    title: `${error.message}` ,
+                    title: ` nnnnn ${error.message}` ,
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -92,10 +92,11 @@ const Register = () => {
             });
         })
         .catch((error) => {
+          console.log(error);
             Swal.fire({
                 position: "top-end",
                 icon: "error",
-                title: `${error.message}`,
+                title: `fdgfdgd ${error.message}`,
                 showConfirmButton: false,
                 timer: 1500
               })
@@ -105,7 +106,7 @@ const Register = () => {
         <div className="bg-gradient-to-r from-[#F28383] from-10% via-[#9D6CD2] via-30% to-[#481EDC] to-90% flex items-center justify-center py-10 lg:h-screen">
         <div className="w-[95%] md:w-[60%] mx-auto bg-black-dark grid lg:grid-cols-2 items-center gap-10 lg:gap-20 p-5 rounded-2xl">
             <div className="">
-                {/* <img src="https://i.ibb.co/cv9L25r/signup-background.jpg" alt=""/> */}
+     
                 <img src="https://i.ibb.co/HhwYph0/teamwork.jpg" alt="" className=""/>
             </div>
     

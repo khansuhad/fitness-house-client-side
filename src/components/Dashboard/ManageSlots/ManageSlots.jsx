@@ -34,7 +34,7 @@ const ManageSlots = () => {
 <div className="card card-compact p-3">
 {/* <figure><img src={appliedTrainer?.image} alt="Shoes" className="w-44 h-44"  /></figure> */}
 <div className="card-body font-medium ">
-  <h2 className=""> Slot : {selectedSlotDetails?.selectedSlot?.slotNumber}</h2>
+  <h2 className=""> Slot : {selectedSlotDetails?.selectedSlot?.slotNumber - 1}</h2>
   <h2 className="">Time Slot : {selectedSlotDetails?.selectedSlot?.timeSlot}</h2>
   <p>Name : {selectedSlotDetails?.bookedUser.name}</p>
   <p>Email : {selectedSlotDetails?.bookedUser.email}</p>

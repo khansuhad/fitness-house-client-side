@@ -47,7 +47,7 @@ const TrainerDetails = () => {
     return (
      
        <div className="pt-36 pb-10">
-         <div className="w-[80%] mx-auto p-10 flex justify-evenly border-4 border-primary rounded bg-base-100 ">
+         <div className="w-[80%] mx-auto p-10 grid grid-cols-2 gap-10 border-4 border-primary rounded bg-base-100 ">
                 <Helmet>
             <title> Fitness house | Trainer Details </title>
           </Helmet>
@@ -59,8 +59,8 @@ const TrainerDetails = () => {
             <h1 className="font-semibold text-2xl text-left">Name : {details?.fullName}</h1>
                 <p className="font-medium text-xl text-left">Email :{details?.email}</p>
   <p className="font-normal text-2xl text-left">Age : {details?.age} years</p>
-  <p className="font-normal text-left block"><span className="text-3xl">Skills : </span>
-    <span className="flex gap-5 font-normal text-left">
+  <p className="font-normal text-left "><span className="text-3xl">Skills : </span>
+    <span className="font-normal text-left">
      {
       details?.skills &&  details?.skills.map((skill , index)=> <li key={index}>{skill}</li>)
      }

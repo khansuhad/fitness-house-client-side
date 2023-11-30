@@ -6,6 +6,7 @@ import NewsLetter from "./NewsLetter";
 import Trainer from "./Trainer";
 import AllClasses from "../Classes/AllClasses";
 import Stories from "./Stories";
+import Featured from "./Featured";
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <title> Fitness house | Home </title>
           </Helmet>
             <HomeBanner/>
+            <Featured/>
             <About/>
             <Stories/>
            <div>

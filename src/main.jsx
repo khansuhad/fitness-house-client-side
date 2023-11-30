@@ -65,12 +65,12 @@ const router = createBrowserRouter([
       {
         path:"/trainerdetails/:id",
         element:<TrainerDetails/>,
-        loader: ({params}) => fetch(`http://localhost:5000/trainers/${params?.id}`)
+        loader: ({params}) => fetch(`https://fitness-house-server.vercel.app/trainers/${params?.id}`)
       },
       {
         path:'/availableslot/:id',
         element:<PrivateRoute><AvailableSlotDetails/></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/newclass/id/${params?.id}`)
+        loader: ({params}) => fetch(`https://fitness-house-server.vercel.app/newclass/id/${params?.id}`)
       },
       {
         path:`/trainer/availabletimslot/:id`,
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
       {
         path:"/forums",
         element:<Forums/>,
-        loader: () => fetch("http://localhost:5000/newforums")
+        loader: () => fetch("https://fitness-house-server.vercel.app/newforums")
       },
       {
         path:'/gallery',
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
       {
         path:'/class/details/:id',
         element:<ClassDetails/>,
-        loader: ({params}) =>  fetch(`http://localhost:5000/newclass/id/${params?.id}`)
+        loader: ({params}) =>  fetch(`https://fitness-house-server.vercel.app/newclass/id/${params?.id}`)
       },
       {
         path:"/dashboard",

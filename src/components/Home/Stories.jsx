@@ -13,7 +13,7 @@ const Stories = () => {
     const [currentPage , setCurrentPage] = useState(0);
     console.log(pages);
     useEffect(() => {
-        axiosPublic.get(`http://localhost:5000/newstories?page=${currentPage}&size=${itemInPage}`)
+        axiosPublic.get(`/newstories?page=${currentPage}&size=${itemInPage}`)
         .then(res => {
             const data = res?.data ;
             setStories(data)
