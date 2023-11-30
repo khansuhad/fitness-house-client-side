@@ -45,6 +45,7 @@ const Dashboard = () => {
         role === 'member' && <div>
               <Link to='/dashboard/activitylog' className="p-2.5 my-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary hover:text-dashmenu">Activity log</Link>
         <Link to='/dashboard/recommendedclass' className="p-2.5 my-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary hover:text-dashmenu">Recommended Class</Link>
+        <Link to='/dashboard/Stories' className="p-2.5 my-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary hover:text-dashmenu">Stories</Link>
         </div>
       }
     

@@ -1,52 +1,45 @@
-
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-import useForums from "../../hooks/useForums";
-import { Helmet } from "react-helmet";
 
 
-const Forums = () => {
+
+const Stories = () => {
     const axiosPublic = useAxiosPublic();
-    // const forum = useLoaderData();
-    const [forum] = useForums()
+    const [stories , setStories] = useState([])
    const  itemInPage = 3 ;
-   const forumLength = forum?.length ;
-    const page = Math.ceil(forumLength / itemInPage) ;
+   const storiesLength = stories?.length ;
+    const page = Math.ceil(storiesLength / itemInPage) ;
     const pages = [...Array(page).keys()];
     const [currentPage , setCurrentPage] = useState(0);
-    const [forums , setForums] = useState([])
     console.log(pages);
     useEffect(() => {
-        axiosPublic.get(`http://localhost:5000/newforums?page=${currentPage}&size=${itemInPage}`)
+        axiosPublic.get(`http://localhost:5000/newstories?page=${currentPage}&size=${itemInPage}`)
         .then(res => {
             const data = res?.data ;
-            setForums(data)
+            setStories(data)
         })
     },[currentPage,axiosPublic])
+
     return (
         <div className="py-10">
             <div className="my-10 ">
-                  <Helmet>
-            <title> Fitness house | Forums </title>
-          </Helmet>
             <div className="flex justify-center items-center ">
-                <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">Forums</h1>
+                <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">Stories</h1>
             </div>
             <div className="py-20">
                 {
-                    forums?.map(forum => <div key={forum?._id} className="w-[80%] mx-auto">
+                    stories?.map(story => <div key={story?._id} className="w-[80%] mx-auto">
                             <div className="flex gap-3 items-center ">
                                 <div className="w-16 h-16">
-                                    <img src={forum?.photoURL} alt="" className="rounded-full" />
+                                    <img src={story?.photoURL} alt="" className="rounded-full" />
                                 </div>
                                 <div className="font-medium">
-                                    <h1>{forum?.name}</h1>
-                                    <h1 className="font-bold">{forum?.role}</h1>
-                                    <h1>{forum?.email}</h1>
+                                    <h1>{story?.name}</h1>
+                                    <h1>{story?.email}</h1>
                                 </div>
                             </div>
                             <div className="text-xl font-normal py-4 text-left">
-                                <p>{forum?.description}</p>
+                                <p>{story?.description}</p>
                             </div>
                             <div className="divider"></div>
                     </div>)
@@ -64,4 +57,4 @@ const Forums = () => {
     );
 };
 
-export default Forums;
+export default Stories;

@@ -43,6 +43,7 @@ import GalleryPage from './components/Gallery/GalleryPage.jsx';
 import AdminRoute from './Route/adminRoute.jsx';
 import AdminAndTrainerRoute from './Route/AdminAndTrainerRoute.jsx';
 import TrainerRoute from './Route/TrainerRoute.jsx';
+import Stories from './components/Dashboard/Stories/Stories.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -145,6 +146,10 @@ const router = createBrowserRouter([
           {
             path:"/dashboard/profilesetting",
             element:<PrivateRoute><ProfileSetting/></PrivateRoute>
+          } ,
+          {
+            path:"/dashboard/stories",
+            element:<PrivateRoute><Stories/></PrivateRoute>
           }
         
 
