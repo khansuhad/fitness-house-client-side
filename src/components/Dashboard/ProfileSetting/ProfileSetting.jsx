@@ -3,6 +3,7 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useUsers from "../../../hooks/useUsers";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 const ProfileSetting = () => {
     const axiosSecure = useAxiosSecure();
@@ -20,11 +21,29 @@ const ProfileSetting = () => {
 
             axiosSecure.patch(`/users/profile/${userInfo?._id}`,info)
             .then(res => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "profile updated successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  console.log(res?.data);
+           
                 console.log(res?.data);
             })
             axiosSecure.patch(`/bookedclass/profile/${userInfo?._id}`,info)
             .then(res => {
                 console.log(res?.data);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "profile updated successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  console.log(res?.data);
+                 
             })
     }
     return (

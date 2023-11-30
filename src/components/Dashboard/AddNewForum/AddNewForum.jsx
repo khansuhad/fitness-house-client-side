@@ -3,6 +3,7 @@ import useUsers from "../../../hooks/useUsers";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 
 
@@ -28,6 +29,15 @@ const AddNewForum = () => {
         axiosPublic.post('/newforums', newForumInfo)
         .then(res => {
             console.log(res?.data);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "added new forum successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              console.log(res?.data);
+              navigate('/')
         })
 
     }

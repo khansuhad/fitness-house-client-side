@@ -1,4 +1,6 @@
+import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Navigate } from "react-router-dom";
 
 // import useAxiosPublic from "../../hooks/useAxiosPublic";
 
@@ -16,7 +18,15 @@ const NewsLetter = () => {
     axiosSecure.post('/subscribers' , subscribeForm)
         .then(res => {
             e.target.reset();
-            console.log(res?.data);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "subscribe successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              console.log(res?.data);
+              Navigate('/')
         })
 
     }

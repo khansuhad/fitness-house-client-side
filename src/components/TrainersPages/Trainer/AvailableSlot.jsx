@@ -2,13 +2,18 @@ import { Link, useParams } from "react-router-dom";
 import useTrainers from "../../../hooks/useTrainers";
 import useTrainerClasses from "../../../hooks/useTrainerClasses";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 
 const AvailableSlot = () => {
     const params = useParams();
     const email = params?.id;
     const [trainerClasses] = useTrainerClasses({email});
-
+    useEffect(() => {
+      if(!trainerClasses){
+        return <div className="h-screen flex items-center justify-center"><span className="loading loading-spinner loading-lg"></span></div>
+      }
+    },[trainerClasses])
     return (
        <div className="py-10">
          <div className="grid grid-cols-4 gap-5 w-[80%] mx-auto mt-20">

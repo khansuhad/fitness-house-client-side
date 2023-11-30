@@ -4,6 +4,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import useAppiledTrainers from '../../../hooks/useAppiledTrainers';
 import { useNavigate } from 'react-router-dom';
 import useUsers from '../../../hooks/useUsers';
+import Swal from 'sweetalert2';
 
 const BeATrainerPage = () => {
   const navigate = useNavigate();
@@ -68,6 +69,13 @@ const BeATrainerPage = () => {
 
     axiosSecure.post('/appliedtrainers', trainerAllInfo)
     .then(res => {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "applied successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
       console.log(res?.data);
       navigate('/')
     })

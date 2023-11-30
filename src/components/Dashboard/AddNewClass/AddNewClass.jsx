@@ -4,6 +4,7 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useTrainers from "../../../hooks/useTrainers";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 
 
@@ -32,7 +33,15 @@ const [trainers] = useTrainers();
             console.log(classForm);
             axiosPublic.post ('/newclass' , classForm)
             .then(res => {
-                console.log(res?.data);
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "added new class successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              console.log(res?.data);
+              
             })
 
     }

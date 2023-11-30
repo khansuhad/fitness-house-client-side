@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 import useTrainers from "../../../hooks/useTrainers";
 import { FaFacebook } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 const Trainer = () => {
   const [trainers] = useTrainers();
   console.log(trainers);
+  useEffect(() => {
+    if(!trainers){
+      return <div className="h-screen flex items-center justify-center"><span className="loading loading-spinner loading-lg"></span></div>
+    }
+  },[trainers])
   return (
     <div className="w-[80%] mx-auto pt-10">
             <Helmet>

@@ -3,8 +3,11 @@ import { Helmet } from 'react-helmet';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import useUsers from '../../../hooks/useUsers';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Stories = () => {
+    const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
     const [presentUser , setPresentUser] = useState();
     const [users] = useUsers();
@@ -25,6 +28,15 @@ const Stories = () => {
         console.log(newForumInfo);
         axiosPublic.post('/newstories', newForumInfo)
         .then(res => {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "created a successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              console.log(res?.data);
+              navigate('/')
             console.log(res?.data);
         })
 

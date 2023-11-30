@@ -3,8 +3,11 @@ import useAppiledTrainers from "../../../hooks/useAppiledTrainers";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useUsers from "../../../hooks/useUsers";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AppliedTrainer = () => {
+  const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const [users] = useUsers();
   const [appliedTrainers] = useAppiledTrainers();
@@ -23,7 +26,15 @@ const AppliedTrainer = () => {
     })
     axiosSecure.delete(`/appliedtrainers/${id}`)
     .then(res => {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Confirmation success",
+        showConfirmButton: false,
+        timer: 1500
+      });
       console.log(res?.data);
+      navigate('/alltrainers')
     })
 
   }
