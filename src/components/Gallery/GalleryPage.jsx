@@ -33,10 +33,13 @@ console.log(data);
 
 
     return (
-        <div>
+        <div className='py-10'>
                   <Helmet>
             <title> Fitness house | Gallery </title>
           </Helmet>
+          <div className="flex justify-center items-center ">
+                <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">Gallery</h1>
+            </div>
             <InfiniteScroll
                 dataLength={ images ? images.length : 0 }
                 next={ () => fetchNextPage() }

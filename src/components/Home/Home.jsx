@@ -15,7 +15,10 @@ const Home = () => {
           </Helmet>
             <HomeBanner/>
             <About/>
-            <AllClasses/>
+           <div>
+           <h1 className="text-primary w-fit mx-auto md:text-5xl text-4xl font-bold text-center flex">---<h2 className=" border-4  p-2 border-primary rounded italic ">Classes</h2>---</h1>
+           <AllClasses/>
+           </div>
             <Forums/>
             <Trainer/>
             <NewsLetter/>

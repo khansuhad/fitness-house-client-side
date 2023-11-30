@@ -40,6 +40,9 @@ import PrivateRoute from './Route/PrivateRoute.jsx';
 import ProfileSetting from './components/Dashboard/ProfileSetting/ProfileSetting.jsx';
 import AvailableSlotDetails from './components/TrainersPages/Trainer/AvaiableSlotDetails.jsx';
 import GalleryPage from './components/Gallery/GalleryPage.jsx';
+import AdminRoute from './Route/adminRoute.jsx';
+import AdminAndTrainerRoute from './Route/AdminAndTrainerRoute.jsx';
+import TrainerRoute from './Route/TrainerRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -109,35 +112,35 @@ const router = createBrowserRouter([
           },
           {
             path:'/dashboard/allsubscribers',
-            element:<PrivateRoute><AllSubscribers/></PrivateRoute>
+            element:<PrivateRoute><AdminRoute><AllSubscribers/></AdminRoute></PrivateRoute>
           },
           {
             path:'/dashboard/alltrainers',
-            element:<PrivateRoute><AllTrainers/></PrivateRoute>
+            element:<PrivateRoute><AdminRoute><AllTrainers/></AdminRoute></PrivateRoute>
           },
           {
             path:'/dashboard/appliedtrainer',
-            element:<PrivateRoute><AppliedTrainer/></PrivateRoute>
+            element:<PrivateRoute><AdminRoute><AppliedTrainer/></AdminRoute></PrivateRoute>
           },
           {
             path:'/dashboard/balance',
-            element:<PrivateRoute><Balance/></PrivateRoute>
+            element:<PrivateRoute><AdminRoute><Balance/></AdminRoute></PrivateRoute>
           },
           {
             path:'/dashboard/addnewforum',
-            element:<PrivateRoute><AddNewForum/></PrivateRoute>
+            element:<PrivateRoute><AdminAndTrainerRoute><AddNewForum/></AdminAndTrainerRoute></PrivateRoute>
           },
           {
             path:'/dashboard/addnewclass',
-            element:<PrivateRoute><AddNewClass/></PrivateRoute>
+            element:<PrivateRoute><TrainerRoute><AddNewClass/></TrainerRoute></PrivateRoute>
           },
           {
               path:'/dashboard/manageslots',
-              element:<PrivateRoute><ManageSlots/></PrivateRoute>
+              element:<PrivateRoute><TrainerRoute><ManageSlots/></TrainerRoute></PrivateRoute>
           },
           {
             path:'/dashboard/managemember',
-            element:<PrivateRoute><ManageMembers/></PrivateRoute>
+            element:<PrivateRoute><TrainerRoute><ManageMembers/></TrainerRoute></PrivateRoute>
           },
           {
             path:"/dashboard/profilesetting",
