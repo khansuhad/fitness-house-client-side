@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useBookedClasses from "../../../hooks/useBookedClasses";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet";
-
+// import { SMTPClient } from 'emailjs';
 const ManageSlots = () => {
+ 
     const {user } = useContext(AuthContext)
     const email = user?.email ;
     const [bookedClasses] = useBookedClasses({email})
@@ -14,7 +15,31 @@ const ManageSlots = () => {
       const slotDetails = bookedClasses.find((booking) => booking.selectedSlot.slotNumber === slotNumber);
       setSelectedSlotDetails(slotDetails);
     };
+  //  const sendEmail = (e, email ) => {
+  //   e.preventDefault();
+  //   const message = e.target.message.value;
+  //   const client = new SMTPClient({
+  //     user: 'khansuhad',
+  //     password: 'RAAshutm12',
+  //     host: 'smtp.suhadahmodkhan@gmail.com',
+  //     ssl: true,
+  //   });
+    
+  //   // send the message and get a callback with an error or details of the message that was sent
+  //   client.send(
+  //     {
+  //       text: message ,
+  //       from: user?.email,
+  //       to: {email},
+    
+  //     },
+  //     (err, message) => {
+  //       console.log(err || message);
+  //     }
+  //   );
    
+  //  }
+
     return (
         <div className="grid grid-cols-7 gap-5 w-[80%] mx-auto mt-10">
                 <Helmet>
@@ -39,11 +64,15 @@ const ManageSlots = () => {
   <p>Name : {selectedSlotDetails?.bookedUser.name}</p>
   <p>Email : {selectedSlotDetails?.bookedUser.email}</p>
   {/* <p>Age : {appliedTrainer?.age}</p> */}
- 
+                          {/* <div>
+                            <form onSubmit={sendEmail}>
+                            <input required type="text"name="message" placeholder="Type your email address..." className="input input-bordered border-primary  w-full" />
+                            </form>
+                            <button type="submit" className=" px-10 py-2 w-full rounded bg-primary transition-all duration-700 border-none hover:bg-dribble hover:text-white hover:border-primary hover:border-4 text-white font-medium text-xl">Reject</button>
+                          </div> */}
   <div className="flex gap-5 justify-center items-center">
   <div className="modal-action">
     <form method="dialog">
-     
       <button className="btn">Close</button>
     </form>
   </div>
