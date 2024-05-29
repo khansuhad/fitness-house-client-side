@@ -80,7 +80,7 @@ const Navbar = () => {
                 </div> */}
             
     <div>
-    <Link  className="p-2 rounded-full text-xl bg-[red] font-roboto  w-[40px] h-[40px] gap-2  font-bold text-white  hover:bg-primary hover:w-[150px] transition-all duration-300 ease-out float-left flex justify-center items-center group" onClick={handleSignOut}>
+    <Link  className="p-2 rounded-full text-xl bg-[red] font-roboto  w-[40px] h-[40px] gap-2  font-bold text-white   hover:w-[100px] transition-all duration-300 ease-out float-left flex justify-center items-center group" onClick={handleSignOut}>
       <p className='w-[40px] h-[40px] items-center flex justify-center'><FaUserCircle ></FaUserCircle></p>
     <p className=' group-hover:block hidden '>SignOut</p></Link>
     </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
              
               </div>  :
                 <div>
-                <Link to="/login" className="p-2 rounded-full text-xl bg-[red] font-roboto  w-[40px] h-[40px] gap-2  font-bold text-white  hover:bg-primary hover:w-[150px] transition-all duration-300 ease-out float-left flex justify-center items-center group" >
+                <Link to="/login" className="p-2 rounded-full text-xl bg-[red] font-roboto  w-[40px] h-[40px] gap-2  font-bold text-white   hover:w-[100px] transition-all duration-300 ease-out float-left flex justify-center items-center group" >
                   <p className='w-[40px] h-[40px] items-center flex justify-center'><FaUserCircle ></FaUserCircle></p>
                 <p className=' group-hover:flex hidden'>SignIn </p></Link>
                 </div>

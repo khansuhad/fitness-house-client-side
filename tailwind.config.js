@@ -13,7 +13,8 @@ export default {
       instrumentSans: "Instrument Sans, sans-serif",
       tiroBangla: "Tiro Bangla , sans-serif",
       hindSiliguri: "Hind Siliguri , sans-serif",
-      teko: "Teko , sans-serif"
+      teko: "Teko , sans-serif",
+      Montserrat: "Montserrat , sans-serif",
     },
       colors: {
         "firstColor": "#860A35",

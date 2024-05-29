@@ -29,7 +29,7 @@ const Home = () => {
 
             {/* <Forums/> */}
             <Trainer/>
-            {/* <NewsLetter/> */}
+            <NewsLetter/>
         </div>
     );
 };

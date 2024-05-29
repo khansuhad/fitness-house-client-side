@@ -33,25 +33,25 @@ console.log(data);
 
 
     return (
-        <div className='py-10'>
+        <div className='py-20 bg-white'>
                   <Helmet>
             <title> Fitness house | Gallery </title>
           </Helmet>
-          <div className="flex justify-center items-center ">
-                <h1 className="bg-primary text-white px-5 py-3 font-semibold italic text-5xl rounded w-fit">Gallery</h1>
-            </div>
+          <div className="flex justify-center items-center">
+        <h2 className="font-bold bg-text-red px-3 py-2 text-center w-fit text-white  ">Gallery</h2>
+        </div>
             <InfiniteScroll
                 dataLength={ images ? images.length : 0 }
                 next={ () => fetchNextPage() }
                 hasMore={ hasNextPage }
                 loading={ <div>Loading...☝️</div> }
             >
-                <div className="w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-5 my-10">
+                <div className="w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center grid-cols-1  gap-5 my-10">
                     { images &&
                         images.map((article, idx) => {
                             return (
-                               <div className=' bg-slate-200 rounded h-[50vh]' key={ idx }>
-                                    <img src={article.image} alt="" className='w--full h-full rounded' />
+                               <div className='  flex justify-center items-center  h-[50vh]' key={ idx }>
+                                    <img src={article.image} alt="" className='w--full h-full ' />
                                 </div>
                             )
                         })
