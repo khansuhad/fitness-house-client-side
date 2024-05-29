@@ -11,43 +11,48 @@ import {
   RouterProvider,
 } from "react-router-dom";
 const queryClient = new QueryClient()
-import Root from './components/Root/Root.jsx';
-import Home from './components/Home/Home.jsx';
-import Login from './components/Login/Login.jsx';
-import Register from './components/Register/Register.jsx';
-import AuthProvider from './AuthProvider/AuthProvider.jsx';
-import Dashboard from './components/Dashboard/Dashboard.jsx';
-import DashboardImg from './components/Dashboard/DashboardImg.jsx';
-import AllSubscribers from './components/Dashboard/AllSubscribers/AllSubscribers.jsx';
-import AllTrainers from './components/Dashboard/AllTrainers/AllTrainers.jsx';
-import AppliedTrainer from './components/Dashboard/AppliedTrainer/AppliedTrainer.jsx';
-import Balance from './components/Dashboard/Balance/Balance.jsx';
-import BeATrainer from './components/TrainersPages/BeATrainer/BeATrainer.jsx';
-import AddNewForum from './components/Dashboard/AddNewForum/AddNewForum.jsx';
-import Forums from './components/Forum/Forums.jsx';
-import Trainer from './components/TrainersPages/Trainer/Trainer.jsx';
-import TrainerDetails from './components/TrainersPages/Trainer/TrainerDetails.jsx';
-import AddNewClass from './components/Dashboard/AddNewClass/AddNewClass.jsx';
-import AvailableSlot from './components/TrainersPages/Trainer/AvailableSlot.jsx';
-import ManageSlots from './components/Dashboard/ManageSlots/ManageSlots.jsx';
-import ManageMembers from './components/Dashboard/ManageMembers/ManageMembers.jsx';
-import Classes from './components/Classes/Classes.jsx';
-import ClassDetails from './components/Classes/ClassDetails.jsx';
-import RecommandedClass from './components/Dashboard/RecommandedClass/RecommandedClass.jsx';
-import ActivityLog from './components/Dashboard/ActivityLog/ActivityLog.jsx';
-import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
-import PrivateRoute from './Route/PrivateRoute.jsx';
-import ProfileSetting from './components/Dashboard/ProfileSetting/ProfileSetting.jsx';
-import AvailableSlotDetails from './components/TrainersPages/Trainer/AvaiableSlotDetails.jsx';
-import GalleryPage from './components/Gallery/GalleryPage.jsx';
-import AdminRoute from './Route/adminRoute.jsx';
-import AdminAndTrainerRoute from './Route/AdminAndTrainerRoute.jsx';
-import TrainerRoute from './Route/TrainerRoute.jsx';
-import Stories from './components/Dashboard/Stories/Stories.jsx';
+import MainLayout from "../src/Layout/MainLayout/MainLayout.jsx"
+import Home from './Pages/Home/Home.jsx';
+
+import BeATrainer from './Pages/TrainersPages/BeATrainer/BeATrainer/BeATrainer.jsx';
+import Trainer from './Pages/TrainersPages/Trainer/Trainer/Trainer.jsx';
+import TrainerDetails from './Pages/TrainersPages/Trainer/TrainerDetails/TrainerDetails.jsx';
+import AvailableSlot from './Pages/TrainersPages/Trainer/AvailableSlot/AvailableSlot.jsx';
+import Classes from './Pages/Classes/Classes.jsx';
+import ClassDetails from './Pages/Classes/ClassDetails/ClassDetails.jsx';
+import Login from './Pages/Login/Login.jsx';
+import Register from './Pages/Register/Register.jsx';
+import AuthProvider from './Provider//AuthProvider/AuthProvider.jsx';
+import Dashboard from './Pages/Dashboard/Dashboard.jsx';
+import DashboardImg from './Pages/Dashboard/DashboardImg/DashboardImg.jsx';
+import AllSubscribers from './Pages/Dashboard/AllSubscribers/AllSubscribers.jsx';
+import AllTrainers from './Pages/Dashboard/AllTrainers/AllTrainers.jsx';
+import AppliedTrainer from './Pages/Dashboard/AppliedTrainer/AppliedTrainer.jsx';
+import Balance from './Pages/Dashboard/Balance/Balance.jsx';
+import AddNewForum from './Pages/Dashboard/AddNewForum/AddNewForum.jsx';
+import Forums from './Pages/Forum/Forums.jsx';
+import AddNewClass from './Pages/Dashboard/AddNewClass/AddNewClass.jsx';
+import ManageSlots from './Pages/Dashboard/ManageSlots/ManageSlots.jsx';
+import ManageMembers from './Pages/Dashboard/ManageMembers/ManageMembers.jsx';
+import RecommandedClass from './Pages/Dashboard/RecommandedClass/RecommandedClass.jsx';
+import ActivityLog from './Pages/Dashboard/ActivityLog/ActivityLog.jsx';
+import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
+import PrivateRoute from './Authorization/Private/Private.jsx';
+import ProfileSetting from './Pages/Dashboard/ProfileSetting/ProfileSetting.jsx';
+import AvailableSlotDetails from './Pages/TrainersPages/Trainer/AvaiableSlotDetails/AvaiableSlotDetails.jsx';
+import GalleryPage from './Pages/Gallery/GalleryPage.jsx';
+import AdminRoute from './Authorization/admin/admin.jsx';
+import AdminAndTrainerRoute from './Authorization/AdminAndTrainer/AdminAndTrainer.jsx';
+import TrainerRoute from './Authorization/Trainer/Trainer.jsx';
+import Stories from './Pages/Dashboard/Stories/Stories.jsx';
+
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/> ,
+    element: <MainLayout/> ,
     errorElement:<ErrorPage/>,
     children: [
       {
